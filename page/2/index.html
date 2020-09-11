@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    
+    摸鱼侠的老巢</title>
+  
+    <link rel="shortcut icon" href="/fish.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><main class="content">
+  <section class="jumbotron">
+  <div class="video">
+    
+      <div class="video-frame">
+        <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
+      </div>
+    
+    <div class="video-media">
+
+      <video playsinline="" autoplay="" loop="" muted="" data-autoplay=""
+             poster="/images/ocean/ocean.png" x5-video-player-type="h5">
+        
+          <source src="https://githubphoto.oss-cn-beijing.aliyuncs.com/video/cloud_trans.mp4" type="video/mp4">
+        
+        <p>Your user agent does not support the HTML5 Video element.</p>
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    <div class="video-inner text-center text-white">
+      <h1><a href="/">摸鱼侠的老巢</a></h1>
+      <p></p>
+      <div><img src="/images/centerfish.svg" class="brand" alt="摸鱼侠的老巢"></div>
+    </div>
+    <div class="video-learn-more">
+      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
+    </div>
+  </div>
+</section>
+
+<div id="landingpage">
+  <section class="outer">
+  <article class="articles">
+    
+    <h1 class="page-type-title"></h1>
+
+    
+      
+        
+
+<article id="post-innodb3" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/06/21/innodb3/">InnoDB-Architecture</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/21/innodb3/" class="article-date">
+  <time datetime="2020-06-21T13:01:42.000Z" itemprop="datePublished">2020-06-21</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <p>总的来说，InnoDB有两部分内容，一个是内存，一个是磁盘，两者间使用OS给的API连接，具体结构如下图所示。<br><img src="https://dev.mysql.com/doc/refman/8.0/en/images/innodb-architecture.png" alt="InnoDB Architecture Figure"></p>
+        
+          <a class="article-more-link" href="/2020/06/21/innodb3/">更多</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.richsoap.site/2020/06/21/innodb3/" data-id="ckey7mni7000f8lmj8ndj0k1l"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/InnoDB/" rel="tag">InnoDB</a></li></ul>
+
+      
+        
+    <span class="article-count-show-icon"><span id="2020-06-21T13:01:42.000Z_show" class="article-count-show"  data-flag-title="InnoDB-Architecture" uuid="2020-06-21T13:01:42.000Z">阅读量:</span>
+    </span>
+
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-innodb2" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/06/21/innodb2/">InnoDB-MVCC</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/21/innodb2/" class="article-date">
+  <time datetime="2020-06-21T03:29:35.000Z" itemprop="datePublished">2020-06-21</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <p>多用户，事务，回滚与持久化<br>
+        
+          <a class="article-more-link" href="/2020/06/21/innodb2/">更多</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.richsoap.site/2020/06/21/innodb2/" data-id="ckey7mni6000e8lmj9re0dmb0"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/InnoDB/" rel="tag">InnoDB</a></li></ul>
+
+      
+        
+    <span class="article-count-show-icon"><span id="2020-06-21T03:29:35.000Z_show" class="article-count-show"  data-flag-title="InnoDB-MVCC" uuid="2020-06-21T03:29:35.000Z">阅读量:</span>
+    </span>
+
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-innodb1" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/06/21/innodb1/">InnoDB-Basic</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/21/innodb1/" class="article-date">
+  <time datetime="2020-06-21T03:06:14.000Z" itemprop="datePublished">2020-06-21</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>面MSRA的时候翻车了，果然应该投点时间给项目经历的，之前时间都投给算法题了，失误失误。好好看一下InnoDB的文档和实现细节好了，说不定什么时候能用上。虽然以前用的是5.6？还是5.7？忘了，反正世博不换8.0.看最新的8.0好了，顺便学习一下全新的Transaction调度算法，对身体好。</p>
+        
+          <a class="article-more-link" href="/2020/06/21/innodb1/">更多</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.richsoap.site/2020/06/21/innodb1/" data-id="ckey7mni5000a8lmj6p8i4axk"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/InnoDB/" rel="tag">InnoDB</a></li></ul>
+
+      
+        
+    <span class="article-count-show-icon"><span id="2020-06-21T03:06:14.000Z_show" class="article-count-show"  data-flag-title="InnoDB-Basic" uuid="2020-06-21T03:06:14.000Z">阅读量:</span>
+    </span>
+
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-flicker" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/06/21/flicker/">Flicker</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/21/flicker/" class="article-date">
+  <time datetime="2020-06-20T17:33:06.000Z" itemprop="datePublished">2020-06-21</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PR/">PR</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <p>明天拍日蚀，先把后期工具准备好<br>
+        
+          <a class="article-more-link" href="/2020/06/21/flicker/">更多</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.richsoap.site/2020/06/21/flicker/" data-id="ckey7mnhy00028lmj4pcs1w80"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flicker/" rel="tag">flicker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%B6%E6%97%B6/" rel="tag">延时</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%91%E9%97%AA/" rel="tag">频闪</a></li></ul>
+
+      
+        
+    <span class="article-count-show-icon"><span id="2020-06-20T17:33:06.000Z_show" class="article-count-show"  data-flag-title="Flicker" uuid="2020-06-20T17:33:06.000Z">阅读量:</span>
+    </span>
+
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-restart" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/06/20/restart/">重新搭建博客编写环境</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/20/restart/" class="article-date">
+  <time datetime="2020-06-19T16:00:00.000Z" itemprop="datePublished">2020-06-20</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/">操作指南</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+  <div class="article-gallery">
+    <div class="article-gallery-photos">
+      
+        
+          <a class="article-gallery-img" href="/2020/06/20/restart/" rel="gallery_ckey7mnii00178lmj7p9qewi5">
+            <img src="https://githubphoto.oss-cn-beijing.aliyuncs.com/img/20200620231830.jpg" itemprop="image">
+          </a>
+        
+      
+    </div>
+  </div>
+
+
+      
+        <p>太久没写博客了，最近要看一下InnoDB的东西，内容有点多，需要写一点内容，然而家里没有写博客的环境，故写下该指南，留备以后使用<br>
+        
+          <a class="article-more-link" href="/2020/06/20/restart/">更多</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.richsoap.site/2020/06/20/restart/" data-id="ckey7mnii00178lmj7p9qewi5"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
+      
+        
+    <span class="article-count-show-icon"><span id="c671be92-c02d-11ea-9151-6245b50ceb17_show" class="article-count-show"  data-flag-title="重新搭建博客编写环境" uuid="c671be92-c02d-11ea-9151-6245b50ceb17">阅读量:</span>
+    </span>
+
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-post_industrial _era" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2020/06/01/post_industrial%20_era/">后工业社会的来临</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/01/post_industrial%20_era/" class="article-date">
+  <time datetime="2020-05-31T16:00:00.000Z" itemprop="datePublished">2020-06-01</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+  <div class="article-gallery">
+    <div class="article-gallery-photos">
+      
+        
+          <a class="article-gallery-img" href="/2020/06/01/post_industrial%20_era/" rel="gallery_ckey7mnih00138lmj31m679xg">
+            <img src="https://githubphoto.oss-cn-beijing.aliyuncs.com/img/_DSC8687.jpg" itemprop="image">
+          </a>
+        
+      
+    </div>
+  </div>
+
+
+      
+        <p>边读边写，碎得一批<br>
+        
+          <a class="article-more-link" href="/2020/06/01/post_industrial%20_era/">更多</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.richsoap.site/2020/06/01/post_industrial%20_era/" data-id="ckey7mnih00138lmj31m679xg"
+         class="article-share-link">分享</a>
+      
+      
+        
+    <span class="article-count-show-icon"><span id="2020-05-31T16:00:00.000Z_show" class="article-count-show"  data-flag-title="后工业社会的来临" uuid="2020-05-31T16:00:00.000Z">阅读量:</span>
+    </span>
+
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-guns_germs_and_steel" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/12/06/guns_germs_and_steel/">枪炮，病菌和钢铁</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/06/guns_germs_and_steel/" class="article-date">
+  <time datetime="2019-12-05T16:00:00.000Z" itemprop="datePublished">2019-12-06</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+  <div class="article-gallery">
+    <div class="article-gallery-photos">
+      
+        
+          <a class="article-gallery-img" href="/2019/12/06/guns_germs_and_steel/" rel="gallery_ckey7mni200068lmj3toi62mo">
+            <img src="https://githubphoto.oss-cn-beijing.aliyuncs.com/img/DSC_0656.jpg" itemprop="image">
+          </a>
+        
+      
+    </div>
+  </div>
+
+
+      
+        <p>小学妹论文的读书笔记</p>
+        
+          <a class="article-more-link" href="/2019/12/06/guns_germs_and_steel/">更多</a>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.richsoap.site/2019/12/06/guns_germs_and_steel/" data-id="ckey7mni200068lmj3toi62mo"
+         class="article-share-link">分享</a>
+      
+      
+        
+    <span class="article-count-show-icon"><span id="2019-12-05T16:00:00.000Z_show" class="article-count-show"  data-flag-title="枪炮，病菌和钢铁" uuid="2019-12-05T16:00:00.000Z">阅读量:</span>
+    </span>
+
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-init" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/11/20/init/">亡羊补牢</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/11/20/init/" class="article-date">
+  <time datetime="2019-11-19T16:00:00.000Z" itemprop="datePublished">2019-11-20</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+  <div class="article-gallery">
+    <div class="article-gallery-photos">
+      
+        
+          <a class="article-gallery-img" href="/2019/11/20/init/" rel="gallery_ckey7mni300088lmjabadeiqe">
+            <img src="https://githubphoto.oss-cn-beijing.aliyuncs.com/img/_DSC7591.jpg" itemprop="image">
+          </a>
+        
+      
+    </div>
+  </div>
+
+
+      
+        <a id="more"></a>
+<p>都已经研一老老🐕了，才写出第一篇博客。还是个hexo测试博客，希望能有个好的开始吧。</p>
+<h2 id="图片插入测试"><a href="#图片插入测试" class="headerlink" title="图片插入测试"></a>图片插入测试</h2><p><img src="https://githubphoto.oss-cn-beijing.aliyuncs.com/img/_DSC8937.jpg" alt="小蜥蜴"></p>
+<h2 id="公式编辑测试"><a href="#公式编辑测试" class="headerlink" title="公式编辑测试"></a>公式编辑测试</h2><p>貌似mathjax的cdn有问题的样子，能正常解析，但却加载不出来，难受</p>
+<script type="math/tex; mode=display">\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}</script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.richsoap.site/2019/11/20/init/" data-id="ckey7mni300088lmjabadeiqe"
+         class="article-share-link">分享</a>
+      
+      
+        
+    <span class="article-count-show-icon"><span id="2019-11-19T16:00:00.000Z_show" class="article-count-show"  data-flag-title="亡羊补牢" uuid="2019-11-19T16:00:00.000Z">阅读量:</span>
+    </span>
+
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+  </article>
+  
+
+  
+    <nav class="page-nav">
+      
+      <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
+</section>
+</div>
+
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+    
+        <li><i class="fe fe-bar-chart"></i> 
+            <span id="bar_chart_show"class="article-count-show"  data-flag-title="阅读量" uuid="totla_read">阅读量:</span>
+            <span id="bar_chart_do"class="total-read-count-do"  data-flag-title="阅读量" uuid="totla_read"></span></li>
+        <li><i class="fe fe-smile-alt"></i> 
+            <span id="smile_alt_show"class="article-count-show"  data-flag-title="访问量" uuid="totla_visit">访问量:</span>
+            <span id="smile_alt_do"class="total-visit-count-do"  data-flag-title="访问量" uuid="totla_visit"></span> </li>
+    
+  </ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 摸鱼侠的老巢</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+  <aside class="sidebar">
+    
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/doublefish.svg" alt="摸鱼侠的老巢"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">主页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">文档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">Tags</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ -->
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("7O0VMVnyJY3agelP7oK3YheP-gzGzoHsz", "i7xdrYvE0xAXFHneDxyQzWaE");</script>
+<script>
+
+function createRecord(Counter, uuid, title) {
+	var newCounter = new Counter();
+	newCounter.set("title", title);
+	newCounter.set("uuid", uuid);
+	newCounter.set("times", 0);
+	newCounter.save(null, {
+		success: function(newCounter) {
+			console.log("create a new counter: title: " + title + ", uuid: "+ uuid)
+			var content = $(document.getElementById(uuid)).text() + ": " + newCounter.get("times");
+			$(document.getElementById(uuid).text(content));
+		},
+		error: function(error) {
+			console.log("failed to create new counter: title: " + title + ", uuid: "+ uuid);
+		}
+	})
+}
+
+function showCount(CounterName) {
+	var Counter = AV.Object.extend(CounterName);
+	var query = new AV.Query(Counter);
+	$(".article-count-show").each(function() {
+		var uuid = $(this).attr("uuid").trim();
+		var url = $(this).attr("id").trim();
+		query.equalTo("uuid", uuid);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + '0';
+					$(document.getElementById(url)).text(content);
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + object.get('times');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				var content = $(document.getElementById(url)).text() + '0';
+				$(document.getElementById(url)).text(content);
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addOneCount(CounterName, classname) {
+	var Counter = AV.Object.extend(CounterName);
+	var uuid = $(classname).attr('uuid').trim();
+	var url = $(classname).attr("id").trim();
+	var title = $(classname).attr('data-flag-title').trim();
+	console.log("query " + uuid)
+	var query = new AV.Query(Counter);
+	query.equalTo("uuid", uuid);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("times");
+				counter.save(null, {
+					success: function() {
+						console.log("add time for uuid: " + uuid + ", title: " + title);
+					},
+					error: function(error) {
+						console.log('Failed to save reader num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				console.log("create " + uuid)
+				createRecord(Counter, uuid, title);
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+
+function addPostCount(CounterName) {
+	var uuid = $(".article-count-do").attr('uuid').trim();
+	if (checkHostKey(uuid)) {
+		addOneCount(CounterName, ".article-count-do");
+		addOneCount(CounterName, ".total-read-count-do");
+	}
+}
+
+function setCookie(key, value) {
+	var hours = 12;
+	var exp = new Date();
+	exp.setTime(exp.getTime() + hours * 60 * 60 * 1000);
+	cookie = key + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/"
+	document.cookie = cookie;
+	console.log(cookie);
+}
+
+function isExistedCookie(key) {
+	return document.cookie.search(key) >= 0
+}
+
+
+function checkHostKey(key) {
+	var existed = isExistedCookie(key);
+	console.log("check result: "+existed)
+	setCookie(key, true);
+	return !existed;
+}
+
+$(function() {
+	if ($('.article-count-do').length == 1) {
+		addPostCount("ReadCounter");
+	}
+	if ($('.total-visit-count-do').length == 1) {
+		if (checkHostKey("total-visit")) {
+			addOneCount("ReadCounter", '.total-visit-count-do');
+		}
+	}
+	if ($('.article-count-show').length > 0) {
+		showCount("ReadCounter");
+	}
+
+});
+</script>
+
+
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"superSample":2,"position":"right","width":200,"height":400,"hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end --></body>
+</html>

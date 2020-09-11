@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    重新搭建博客编写环境 |
+    
+    摸鱼侠的老巢</title>
+  
+    <link rel="shortcut icon" href="/fish.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><main class="content">
+  <section class="outer">
+  
+
+<article id="post-restart" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      重新搭建博客编写环境
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/20/restart/" class="article-date">
+  <time datetime="2020-06-19T16:00:00.000Z" itemprop="datePublished">2020-06-20</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/">操作指南</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+  <div class="article-gallery">
+    <div class="article-gallery-photos">
+      
+        
+          <img src="https://githubphoto.oss-cn-beijing.aliyuncs.com/img/20200620231830.jpg" itemprop="image">
+        
+      
+    </div>
+  </div>
+
+
+      
+        <p>太久没写博客了，最近要看一下InnoDB的东西，内容有点多，需要写一点内容，然而家里没有写博客的环境，故写下该指南，留备以后使用<br><a id="more"></a></p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h3><ol>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载</a>node.js</li>
+<li>一路Next安装</li>
+<li>win10设置里搜索powershell，打开非签名脚本的运行</li>
+</ol>
+<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><ol>
+<li>找到hexo<a href="https://hexo.io/" target="_blank" rel="noopener">主页</a></li>
+<li>安装</li>
+</ol>
+<h3 id="hexo-deployer-git"><a href="#hexo-deployer-git" class="headerlink" title="hexo-deployer-git"></a>hexo-deployer-git</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h3><ol>
+<li>下载并安装<a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">PicGO</a>，下载速度是真滴慢，佛了</li>
+<li>配置阿里云OSS</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>条目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KeyID</td>
+<td>保密</td>
+</tr>
+<tr>
+<td>KeySecret</td>
+<td>保密</td>
+</tr>
+<tr>
+<td>存储空间名</td>
+<td>githubphoto</td>
+</tr>
+<tr>
+<td>存储区域</td>
+<td>oss-cn-beijing</td>
+</tr>
+<tr>
+<td>存储路径</td>
+<td>img/</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="下载源项目"><a href="#下载源项目" class="headerlink" title="下载源项目"></a>下载源项目</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:richsoap/RichSoapBlog</span><br></pre></td></tr></table></figure>
+<h2 id="编写内容"><a href="#编写内容" class="headerlink" title="编写内容"></a>编写内容</h2><p>内容在source/_posts下，markdown格式</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server //可以动态调试欸，神奇</span><br></pre></td></tr></table></figure>
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><h3 id="设定发布路径"><a href="#设定发布路径" class="headerlink" title="设定发布路径"></a>设定发布路径</h3><p>_config.yml文件的末尾改为（应该已经改好了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:richsoap/richsoap.GitHub.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.richsoap.site/2020/06/20/restart/" data-id="ckey7mnii00178lmj7p9qewi5"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
+      
+        
+    <span class="article-count-show-icon"><span id="c671be92-c02d-11ea-9151-6245b50ceb17_show" class="article-count-show"  data-flag-title="重新搭建博客编写环境" uuid="c671be92-c02d-11ea-9151-6245b50ceb17">阅读量:</span>
+    </span>
+
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/21/flicker/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            Flicker
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/01/post_industrial%20_era/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">后工业社会的来临</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '06d26f843192b3cd2f5b',
+      clientSecret: '8874ed9a8725d3c529802968d02ec355404c52bc',
+      repo: 'BlogComments',
+      owner: 'richsoap',
+      admin: ['richsoap'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+</article>
+
+
+
+  
+	<span id="c671be92-c02d-11ea-9151-6245b50ceb17_do"class="article-count-do"  data-flag-title="重新搭建博客编写环境" uuid="c671be92-c02d-11ea-9151-6245b50ceb17"></span>
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+    
+        <li><i class="fe fe-bar-chart"></i> 
+            <span id="bar_chart_show"class="article-count-show"  data-flag-title="阅读量" uuid="totla_read">阅读量:</span>
+            <span id="bar_chart_do"class="total-read-count-do"  data-flag-title="阅读量" uuid="totla_read"></span></li>
+        <li><i class="fe fe-smile-alt"></i> 
+            <span id="smile_alt_show"class="article-count-show"  data-flag-title="访问量" uuid="totla_visit">访问量:</span>
+            <span id="smile_alt_do"class="total-visit-count-do"  data-flag-title="访问量" uuid="totla_visit"></span> </li>
+    
+  </ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 摸鱼侠的老巢</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/doublefish.svg" alt="摸鱼侠的老巢"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">主页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">文档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">Tags</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ -->
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("7O0VMVnyJY3agelP7oK3YheP-gzGzoHsz", "i7xdrYvE0xAXFHneDxyQzWaE");</script>
+<script>
+
+function createRecord(Counter, uuid, title) {
+	var newCounter = new Counter();
+	newCounter.set("title", title);
+	newCounter.set("uuid", uuid);
+	newCounter.set("times", 0);
+	newCounter.save(null, {
+		success: function(newCounter) {
+			console.log("create a new counter: title: " + title + ", uuid: "+ uuid)
+			var content = $(document.getElementById(uuid)).text() + ": " + newCounter.get("times");
+			$(document.getElementById(uuid).text(content));
+		},
+		error: function(error) {
+			console.log("failed to create new counter: title: " + title + ", uuid: "+ uuid);
+		}
+	})
+}
+
+function showCount(CounterName) {
+	var Counter = AV.Object.extend(CounterName);
+	var query = new AV.Query(Counter);
+	$(".article-count-show").each(function() {
+		var uuid = $(this).attr("uuid").trim();
+		var url = $(this).attr("id").trim();
+		query.equalTo("uuid", uuid);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + '0';
+					$(document.getElementById(url)).text(content);
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + object.get('times');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				var content = $(document.getElementById(url)).text() + '0';
+				$(document.getElementById(url)).text(content);
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addOneCount(CounterName, classname) {
+	var Counter = AV.Object.extend(CounterName);
+	var uuid = $(classname).attr('uuid').trim();
+	var url = $(classname).attr("id").trim();
+	var title = $(classname).attr('data-flag-title').trim();
+	console.log("query " + uuid)
+	var query = new AV.Query(Counter);
+	query.equalTo("uuid", uuid);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("times");
+				counter.save(null, {
+					success: function() {
+						console.log("add time for uuid: " + uuid + ", title: " + title);
+					},
+					error: function(error) {
+						console.log('Failed to save reader num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				console.log("create " + uuid)
+				createRecord(Counter, uuid, title);
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+
+function addPostCount(CounterName) {
+	var uuid = $(".article-count-do").attr('uuid').trim();
+	if (checkHostKey(uuid)) {
+		addOneCount(CounterName, ".article-count-do");
+		addOneCount(CounterName, ".total-read-count-do");
+	}
+}
+
+function setCookie(key, value) {
+	var hours = 12;
+	var exp = new Date();
+	exp.setTime(exp.getTime() + hours * 60 * 60 * 1000);
+	cookie = key + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/"
+	document.cookie = cookie;
+	console.log(cookie);
+}
+
+function isExistedCookie(key) {
+	return document.cookie.search(key) >= 0
+}
+
+
+function checkHostKey(key) {
+	var existed = isExistedCookie(key);
+	console.log("check result: "+existed)
+	setCookie(key, true);
+	return !existed;
+}
+
+$(function() {
+	if ($('.article-count-do').length == 1) {
+		addPostCount("ReadCounter");
+	}
+	if ($('.total-visit-count-do').length == 1) {
+		if (checkHostKey("total-visit")) {
+			addOneCount("ReadCounter", '.total-visit-count-do');
+		}
+	}
+	if ($('.article-count-show').length > 0) {
+		showCount("ReadCounter");
+	}
+
+});
+</script>
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"superSample":2,"position":"right","width":200,"height":400,"hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end --></body>
+</html>

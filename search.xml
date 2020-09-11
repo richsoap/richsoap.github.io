@@ -1,0 +1,1330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>尘埃拉力2.0-H2(FWD)</title>
+    <url>/2020/07/16/dirty1/</url>
+    <content><![CDATA[<p><img src="https://githubphoto.oss-cn-beijing.aliyuncs.com/img/20200716005113.png" alt="ScoreBoard"></p>
+<p><strong>全油，全油，全油！</strong></p>
+<a id="more"></a>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>不知道为什么突然就能稳定跑第一了，明明上一个event还是29th来着，有点莫名其妙。决定把心得体会记下来，希望下次再开车的时候能有点长进吧。</p>
+<h2 id="加速-刹车"><a href="#加速-刹车" class="headerlink" title="加速/刹车"></a>加速/刹车</h2><h3 id="不能这么做"><a href="#不能这么做" class="headerlink" title="不能这么做"></a>不能这么做</h3><ul>
+<li>油门不能到底，容易发动机过热导致后半段速度起不来</li>
+<li>刹车也不能一脚到底，一脚到底意味着失去对方向的控制，略微的不平衡就会导致严重侧滑</li>
+</ul>
+<h3 id="应该这么做"><a href="#应该这么做" class="headerlink" title="应该这么做"></a>应该这么做</h3><ul>
+<li>油门应该将发动机转速保持在7K-8K转</li>
+<li>减速时应当点刹和点油交替进行，在减速的同时保持一定的方向控制能力</li>
+</ul>
+<h2 id="过弯"><a href="#过弯" class="headerlink" title="过弯"></a>过弯</h2><h3 id="sq"><a href="#sq" class="headerlink" title="sq"></a>sq</h3><ol>
+<li>看清楚转弯的点，距离30m左右开始减速</li>
+<li>中央入弯，还差2m左右打方向和手刹点刹</li>
+<li>稍微多转一点点再给油，减少侧滑距离</li>
+<li>冲冲冲</li>
+</ol>
+<h3 id="hp"><a href="#hp" class="headerlink" title="hp"></a>hp</h3><p>HP一致都不太会，隐约觉得应该是减速内线手刹甩尾来着，然而总是拿捏不好减速的距离，不是入弯太快就是速度太慢，难搞</p>
+<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><ul>
+<li>tight：收油到50，打方向盘，</li>
+<li>long：收油到40，方向盘和手刹配合</li>
+</ul>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><ul>
+<li>tight：收油到50，打方向盘</li>
+<li>long：收油到50，打方向盘。在比较滑的路面上需要手刹配合，控制入弯速度</li>
+</ul>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><ul>
+<li>tight：收油到80，打方向盘</li>
+<li>long：收油到60，方向盘。土路来点手刹比较帅，只是容易剐蹭；石子路要非常注意入弯速度，容易快乐给油，快乐起飞</li>
+</ul>
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><ul>
+<li>tight：收油到90，打方向盘</li>
+<li>long：收油到70，打方向盘，千万别手刹，速度太快容易侧滑</li>
+</ul>
+<h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><ul>
+<li>tight：任何速度都不用收油，打方向盘</li>
+<li>long：收油到90，打方向盘</li>
+</ul>
+<h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><ul>
+<li>tight：任何速度都不用收油，打方向盘</li>
+<li>long：收油到110，打方向盘</li>
+</ul>
+<h3 id="直线"><a href="#直线" class="headerlink" title="直线"></a>直线</h3><p><strong>全油，全油，全油！</strong></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>尘埃真鸡儿帅，下个月微软模拟飞行发售，就更快乐了。啧，想买VR了</p>
+]]></content>
+      <categories>
+        <category>Game</category>
+      </categories>
+      <tags>
+        <tag>Dirt Rally 2.0</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flicker</title>
+    <url>/2020/06/21/flicker/</url>
+    <content><![CDATA[<p>明天拍日蚀，先把后期工具准备好<br><a id="more"></a></p>
+<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><p>去除视频的闪烁，例如</p>
+<ul>
+<li>交流电照明下的频闪</li>
+<li>延时曝光不同导致的亮度突变</li>
+</ul>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>百度云的后期工具文件夹中</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li>把安装得到aex文件放入到pr的plug-ins中即可，绝对不是什么神奇的Common文件夹，别听教程内容瞎说</li>
+</ol>
+]]></content>
+      <categories>
+        <category>PR</category>
+      </categories>
+      <tags>
+        <tag>flicker</tag>
+        <tag>延时</tag>
+        <tag>频闪</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>枪炮，病菌和钢铁</title>
+    <url>/2019/12/06/guns_germs_and_steel/</url>
+    <content><![CDATA[<p>小学妹论文的读书笔记</p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>什么是聪明<br>聪明是适者生存在不同条件下的反应</p>
+<h2 id="全书结构"><a href="#全书结构" class="headerlink" title="全书结构"></a>全书结构</h2><h3 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h3><ol>
+<li>人类进化与旅行</li>
+<li>岛屿环境的影响</li>
+<li>同时代目击者的描述</li>
+</ol>
+<h3 id="粮食"><a href="#粮食" class="headerlink" title="粮食"></a>粮食</h3><ol>
+<li>农业类型</li>
+<li>农业发展方式</li>
+</ol>
+<h3 id="疾病"><a href="#疾病" class="headerlink" title="疾病"></a>疾病</h3><h3 id="战争"><a href="#战争" class="headerlink" title="战争"></a>战争</h3><h2 id="波利尼西亚群岛"><a href="#波利尼西亚群岛" class="headerlink" title="波利尼西亚群岛"></a>波利尼西亚群岛</h2><h3 id="六种可变因素导致社会发展差异"><a href="#六种可变因素导致社会发展差异" class="headerlink" title="六种可变因素导致社会发展差异"></a>六种可变因素导致社会发展差异</h3><ol>
+<li>岛屿气候</li>
+<li>地质因素</li>
+<li>海洋资源</li>
+<li>面积</li>
+<li>地形</li>
+<li>隔离程度<h3 id="生存与其他因素的关系"><a href="#生存与其他因素的关系" class="headerlink" title="生存与其他因素的关系"></a>生存与其他因素的关系</h3></li>
+</ol>
+<h2 id="粮食-1"><a href="#粮食-1" class="headerlink" title="粮食"></a>粮食</h2><p>粮食带来更多的人口，更多的劳动力，也就才有科学技术/行政体系/军队</p>
+<h3 id="定居"><a href="#定居" class="headerlink" title="定居"></a>定居</h3><p>粮食带来定居</p>
+<ol>
+<li>定居带来更高的人口生育率和抚养率</li>
+<li>定居还带来粮食贮藏，贮藏就需要行政组织等无需进行农作物生产的组织</li>
+<li>农业还能带来大量皮毛/棉花等，帮助人群适应恶劣环境</li>
+<li>更多的人也会带来疾病</li>
+</ol>
+<h3 id="粮食生产的因素"><a href="#粮食生产的因素" class="headerlink" title="粮食生产的因素"></a>粮食生产的因素</h3><ol>
+<li>野生食物来源减少</li>
+<li>可循环野生植物的可能性增加</li>
+<li>粮食生产基于技术，而技术开源积累</li>
+<li>人口和粮食生产的关系<h3 id="植物"><a href="#植物" class="headerlink" title="植物"></a>植物</h3>通过收获这些具有特别可取品质的野生植物，古人(其他动物)在无意识中传播了这些植物，让它们走上驯化之路</li>
+</ol>
+<h4 id="适合驯化的特征"><a href="#适合驯化的特征" class="headerlink" title="适合驯化的特征"></a>适合驯化的特征</h4><ol>
+<li>适合收集的种子</li>
+<li>适合储藏的种子</li>
+<li>繁殖系统</li>
+<li>数量够多</li>
+</ol>
+<h4 id="驯化过程"><a href="#驯化过程" class="headerlink" title="驯化过程"></a>驯化过程</h4><ol>
+<li>本身可以食用的单年生作物</li>
+<li>纤维作物(如果有足够动物皮毛可以跳过)</li>
+<li>多年生作物</li>
+<li>果树<h4 id="驯化的共性"><a href="#驯化的共性" class="headerlink" title="驯化的共性"></a>驯化的共性</h4>淀粉植物占绝对多数，也是最早驯化的植物<h3 id="动物"><a href="#动物" class="headerlink" title="动物"></a>动物</h3>可驯化的动物都是可以驯化的；不可驯化的动物各有各的不可驯化之处</li>
+</ol>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>亡羊补牢</title>
+    <url>/2019/11/20/init/</url>
+    <content><![CDATA[<a id="more"></a>
+<p>都已经研一老老🐕了，才写出第一篇博客。还是个hexo测试博客，希望能有个好的开始吧。</p>
+<h2 id="图片插入测试"><a href="#图片插入测试" class="headerlink" title="图片插入测试"></a>图片插入测试</h2><p><img src="https://githubphoto.oss-cn-beijing.aliyuncs.com/img/_DSC8937.jpg" alt="小蜥蜴"></p>
+<h2 id="公式编辑测试"><a href="#公式编辑测试" class="headerlink" title="公式编辑测试"></a>公式编辑测试</h2><p>貌似mathjax的cdn有问题的样子，能正常解析，但却加载不出来，难受</p>
+<script type="math/tex; mode=display">\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}</script>]]></content>
+  </entry>
+  <entry>
+    <title>InnoDB-Basic</title>
+    <url>/2020/06/21/innodb1/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>面MSRA的时候翻车了，果然应该投点时间给项目经历的，之前时间都投给算法题了，失误失误。好好看一下InnoDB的文档和实现细节好了，说不定什么时候能用上。虽然以前用的是5.6？还是5.7？忘了，反正世博不换8.0.看最新的8.0好了，顺便学习一下全新的Transaction调度算法，对身体好。</p>
+<a id="more"></a>
+<h2 id="InnoDB关键特性"><a href="#InnoDB关键特性" class="headerlink" title="InnoDB关键特性"></a>InnoDB关键特性</h2><ul>
+<li><p>ACID和事务</p>
+</li>
+<li><p>行级锁，Oracle-sytle consistent reads</p>
+</li>
+<li>自动化主键</li>
+<li>外键</li>
+</ul>
+<h2 id="消耗"><a href="#消耗" class="headerlink" title="消耗"></a>消耗</h2><ul>
+<li>高CPU</li>
+<li>高内存</li>
+<li>高硬盘</li>
+</ul>
+<h2 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h2><p>ACID主要是针对事务而言的，每一项功能都有与之对应的MySQL设置或特性。</p>
+<h3 id="Atomicity"><a href="#Atomicity" class="headerlink" title="Atomicity"></a>Atomicity</h3><p>事务是不可分割的最小工作单位</p>
+<ul>
+<li>Autocommit setting.</li>
+<li>COMMIT statement.</li>
+<li>ROLLBACK statement.</li>
+<li>Operational data from the INFORMATION_SCHEMA tables.</li>
+</ul>
+<h3 id="Consistency"><a href="#Consistency" class="headerlink" title="Consistency"></a>Consistency</h3><p>事务后不应当出现结构性错误，主要是防Crash</p>
+<ul>
+<li>DoubleWrite Buffer in InnoDB</li>
+<li>Crash recovery in InnoDB</li>
+</ul>
+<h3 id="Isolation"><a href="#Isolation" class="headerlink" title="Isolation"></a>Isolation</h3><p>并发事务隔离</p>
+<ul>
+<li>Autocommit setting.</li>
+<li>SET ISOLATION LEVEL statement.</li>
+<li>The low-level details of InnoDB locking. During performance tuning, you see these details through INFORMATION_SCHEMA tables.</li>
+</ul>
+<h3 id="Durability"><a href="#Durability" class="headerlink" title="Durability"></a>Durability</h3><p>内容提交后将不再修改，实现起来相当麻烦，且于硬件性能关系密切，例如CPU性能，磁盘性能，对于异地部署而言还需要考虑网络性能。</p>
+<ul>
+<li>InnoDB doublewrite buffer, turned on and off by the innodb_doublewrite configuration option.</li>
+<li>Configuration option innodb_flush_log_at_trx_commit.</li>
+<li>Configuration option sync_binlog.</li>
+<li>Configuration option innodb_file_per_table.</li>
+<li>Write buffer in a storage device, such as a disk drive, SSD, or RAID array.</li>
+<li>Battery-backed cache in a storage device.</li>
+<li>The operating system used to run MySQL, in particular its support for the fsync() system call.</li>
+<li>Uninterruptible power supply (UPS) protecting the electrical power to all computer servers and storage devices that run MySQL servers and store MySQL data.</li>
+<li>Your backup strategy, such as frequency and types of backups, and backup retention periods.</li>
+<li>For distributed or hosted data applications, the particular characteristics of the data centers where the hardware for the MySQL servers is located, and network connections between the data centers.</li>
+</ul>
+<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-introduction.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/innodb-introduction.html</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/mysql-acid.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/mysql-acid.html</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>InnoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>InnoDB-MVCC</title>
+    <url>/2020/06/21/innodb2/</url>
+    <content><![CDATA[<p>多用户，事务，回滚与持久化<br><a id="more"></a></p>
+<h2 id="三个额外域"><a href="#三个额外域" class="headerlink" title="三个额外域"></a>三个额外域</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>长度/Byte</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DB_TRX_ID</td>
+<td>6</td>
+<td>最后插入/修改该行的事务ID</td>
+</tr>
+<tr>
+<td>DB_ROLL_PTR</td>
+<td>7</td>
+<td>历史数据(undo log)指针</td>
+</tr>
+<tr>
+<td>DB_ROW_ID</td>
+<td>6</td>
+<td>自增行号，只在使用默认自增的时候才会出现</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>此外，还有一个删除标志位，用于表示数据已被删除，然而并没有写该标志位的具体位置，需要看看源码</p>
+<h2 id="Undo-Logs"><a href="#Undo-Logs" class="headerlink" title="Undo Logs"></a>Undo Logs</h2><p>Undo logs有两种，insert undo logs &amp; update undo logs</p>
+<h3 id="insert-undo-logs"><a href="#insert-undo-logs" class="headerlink" title="insert undo logs"></a>insert undo logs</h3><p>仅用于事务回滚，且在事务提交后就可以回收。有点疑惑具体的使用场景</p>
+<h3 id="update-undo-logs"><a href="#update-undo-logs" class="headerlink" title="update undo logs"></a>update undo logs</h3><p>用于一致性读，但是只有在没有事务会读到该数据的前提下才能回收。主要用于提供不同时间点的快照</p>
+<h3 id="Notice"><a href="#Notice" class="headerlink" title="Notice"></a>Notice</h3><p>周期性将事务提交是一个好习惯，否则InnoDB不知道现在应该回收哪些数据，进而可能导致rollback segment太大</p>
+<h3 id="Space"><a href="#Space" class="headerlink" title="Space"></a>Space</h3><p>undo log所占空间一般比常规的行要小，具体计算方法未知</p>
+<h3 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h3><p>在InnoDB的MVCC中，删除行时只会加上一个标志位，并不是马上就物理删除的，只有在没有事务会再读到该数据时，才会用非常快的速度将其从rollback segment物理删除(purge)。具体的触发条件是，删除该行的update undo log被回收的时候，进行purge操作。<br>注意，以保证服务质量，purge线程只有在没有数据写入的情况下运行，所以如果边写边删，purge线程将会一直被延迟执行，最终导致数据库会越来越大。具体延迟时间，通过参数innodb_max_purge_lag调整。</p>
+<h2 id="MVCC和辅助索引"><a href="#MVCC和辅助索引" class="headerlink" title="MVCC和辅助索引"></a>MVCC和辅助索引</h2><p>主索引进行更新的时候，如前文所示，会将当前数据拷贝到rollback segment中，再原地修改当前的数据。由于辅助索引不具备TRX_ID等额外列，所以做不到原地修改的效果。</p>
+<h3 id="辅助索引修改流程"><a href="#辅助索引修改流程" class="headerlink" title="辅助索引修改流程"></a>辅助索引修改流程</h3><ol>
+<li>旧索引项被标记为删除</li>
+<li>插入新索引</li>
+<li>删除旧索引</li>
+</ol>
+<h3 id="删除时被访问"><a href="#删除时被访问" class="headerlink" title="删除时被访问"></a>删除时被访问</h3><p>当被标记删除的索引项被访问到时，InnoDB会先去找主索引，再检查上文中的那一堆DB_TRX_ID等。如果DB_TRX_ID不对，则会放弃使用辅助索引，直接去主索引里面找（遍历）</p>
+<h3 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h3><p>当Index Condition Pushdown优化被打开时，而且刚好Where项里的内容能够用索引找到，MySQL上层服务会直接把整个Where语句推给底层的InnoDB引擎，InnoDB会先去索引里面找有没有符合项，如果没有，那就认为这个Where啥也没选中，返回空；如果找到了，即使被标记为删除，InnoDB还是会去主索引里面再确认一下DB_TRX_ID和其他使用该辅助索引无法确定的判断条件等信息。</p>
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-multi-versioning.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/innodb-multi-versioning.html</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>InnoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>InnoDB-Architecture</title>
+    <url>/2020/06/21/innodb3/</url>
+    <content><![CDATA[<p>总的来说，InnoDB有两部分内容，一个是内存，一个是磁盘，两者间使用OS给的API连接，具体结构如下图所示。<br><img src="https://dev.mysql.com/doc/refman/8.0/en/images/innodb-architecture.png" alt="InnoDB Architecture Figure"></p>
+<a id="more"></a>
+<h2 id="In-Memory-Structres"><a href="#In-Memory-Structres" class="headerlink" title="In-Memory Structres"></a>In-Memory Structres</h2><p>从图里也看到了，内存里主要就四个东西Buffer Pool, Change Buffer, Adaptive Hash Index和Log Buffer</p>
+<h3 id="Buffer-Pool"><a href="#Buffer-Pool" class="headerlink" title="Buffer Pool"></a>Buffer Pool</h3><p>Buffer池，涉及到频繁分配内存的应用都会有个Buffer池，看看InnoDB怎么个实现方式。</p>
+<h4 id="存什么"><a href="#存什么" class="headerlink" title="存什么"></a>存什么</h4><p>Buffer Pool里存的都是InnoDB缓存的表和索引，主要是减少访问热数据时带来的读磁盘，从而提升整个系统的运行速度。在专用的机器上，最多会有80%的内存被用于Buffer Pool。</p>
+<h4 id="怎么存"><a href="#怎么存" class="headerlink" title="怎么存"></a>怎么存</h4><p>Buffer Pool里的内存被分配为多页，页与页之间构成一个链表，使用LRU算法排布数据。所以，知道如何将热表放在Buffer Pool里是MySQL调优的重要手段。</p>
+<h4 id="LRU算法"><a href="#LRU算法" class="headerlink" title="LRU算法"></a>LRU算法</h4><p>InnoDB用的LRU算法如下</p>
+<ul>
+<li>页和页构成链表</li>
+<li>空间不足时，删除最不常访问的页，将新页插入到链表中部，并将链表分为新链（最常访问）和旧链（最不常访问）</li>
+<li>当访问旧页(位于旧链的页)时，该页被插到新链首</li>
+<li>页不会被主动地往链尾移动，它只会因为其他页变新而被挤到链尾，最终被挤出去</li>
+</ul>
+<p>那么问题来了，什么是链表中部呢？新插入的数据将链表分为前5/8和后3/8.其中，前5/8表示的是最常访问的数据，后3/8表示的是最不常访问的数据，并不是真的1/2位置。</p>
+<p>那么问题又来了，什么时候插数据进去呢？当用户进行SQL查询的时候，或者MySQL进行read-ahead（由上层应用发起的提前加载可能出现的页的操作）时。此外，当用户进行SQL查询时，已有页会变新，但如果只是read-ahead，那只会把缺的页读进来，但只有再次被读时，才会变新。</p>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ol>
+<li>表格扫描，或者其他会导致MySQLDump的操作，会把一整个表都读入到Buffer Pool中，影响性能</li>
+</ol>
+<h3 id="Change-Buffer"><a href="#Change-Buffer" class="headerlink" title="Change Buffer"></a>Change Buffer</h3><p>由于辅助索引没有唯一性要求，且大部分修改都比较随机，所以需要一个数据结构来统筹规划一下修改，避免修改过于零散导致磁盘IO性能损失太多。例如一部分依据辅助索引进行判断的删改查。需要注意的是，Change Buffer并不只是Buffer Pool的配套功能，磁盘中也有一个Change Buffer，用以避免零散的磁盘IO。</p>
+<h4 id="存什么-1"><a href="#存什么-1" class="headerlink" title="存什么"></a>存什么</h4><p>Change Buffer是一个特殊的数据结构，旨在缓存那些对辅助索引进行修改，但主索引中的相关数据却并没有在Buffer Pool中的情况，例如Insert, Update和Delete。当相关页被读入Buffer Pool的时候，又将具体的修改应用上去（可能是有人要读相关内容，或者只是Purge线程清理数据）。</p>
+<h3 id="Adaptive-Hash-Index"><a href="#Adaptive-Hash-Index" class="headerlink" title="Adaptive Hash Index"></a>Adaptive Hash Index</h3><p>Adaptive Hash Index通过牺牲一部分传统功能和可靠性，向外界提供类似于Hash表的接口，方便开发。主要的思想是，将查询过程中需要用到的B+树节点缓存下来，避免因为上层节点而频繁IO。</p>
+<h4 id="这个Index由谁建"><a href="#这个Index由谁建" class="headerlink" title="这个Index由谁建"></a>这个Index由谁建</h4><p>显然，如果一个表能经常地被映射到内存里面，那性能提升就比较明显，这个Index由InnoDB内部的一套分析机制决定，按照性能提升最大的方式建索引。</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ol>
+<li>在某些工作负载下，Hash索引的查找速度可能并不咋地，而且像Like之类的泛查找并不能从中获益，甚至还会导致Hash索引速度变慢，所以可以有选择地将其关闭。</li>
+<li>Hash索引是分区的，不同索引会被分到不同的区，具体多少个区，每个区有多大都有参数进行调整。</li>
+</ol>
+<h3 id="Log-Buffer"><a href="#Log-Buffer" class="headerlink" title="Log Buffer"></a>Log Buffer</h3><p>Log Buffer中存的是一些需要被flush进磁盘的内容，这部分内容会被周期性地写进磁盘中。如果一个事务修改的数据太多，会导致Log Buffer满了，然后就得停下更新，写磁盘，然后继续更新，这样会影响性能。这样的情况下，Log Buffer大一些对身体好。此外，由于事务的隔离等原因，所以这个Log Buffer也有多种写的方式，具体见参数innodb_flush_log_at_trx_commit。</p>
+<h2 id="On-Disk-Structures"><a href="#On-Disk-Structures" class="headerlink" title="On-Disk Structures"></a>On-Disk Structures</h2><p>Tables, Indexs, Tablespaces, Doublewrite Buffer, Redo Log &amp; Undo Logs</p>
+<h3 id="Tables"><a href="#Tables" class="headerlink" title="Tables"></a>Tables</h3><p>表没啥好说的，就一个抽象概念，需要有主键，要使用个别炫酷的数据类型还需要开启相应的配置。</p>
+<h4 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h4><p>主键就写一下定义好了</p>
+<ol>
+<li>查询中最常使用的列</li>
+<li>没有前导空格</li>
+<li>没有重复值</li>
+<li>几乎不会变</li>
+</ol>
+<h3 id="Indexs"><a href="#Indexs" class="headerlink" title="Indexs"></a>Indexs</h3><h4 id="Clustered-Index"><a href="#Clustered-Index" class="headerlink" title="Clustered Index"></a>Clustered Index</h4><p>每一个InnoDB表都有一个主索引(使用主键作为key)，有三种可选的主键</p>
+<ol>
+<li>手动指定PRIMARY KEY</li>
+<li>第一个UNIQUE类型，且非空的列</li>
+<li>InnoDB自动加上的GEN_CLUST_INDEX隐藏列(6-byte)</li>
+</ol>
+<h3 id="Secondary-Indexs"><a href="#Secondary-Indexs" class="headerlink" title="Secondary Indexs"></a>Secondary Indexs</h3><p>辅助索引就可以有很多个了，最终辅助索引得到的只是相关数据的主键，所以，主键越长，辅助索引越大</p>
+<h3 id="Tablespaces"><a href="#Tablespaces" class="headerlink" title="Tablespaces"></a>Tablespaces</h3><h4 id="The-System-Tablespaces"><a href="#The-System-Tablespaces" class="headerlink" title="The System Tablespaces"></a>The System Tablespaces</h4><p>Change buffer的存储位置，也包括系统空间内的表和索引数据，该空间下可以有多个数据文件，数量和尺寸均可以通过参数调整。</p>
+<h4 id="File-Per-Table-Tablespaces"><a href="#File-Per-Table-Tablespaces" class="headerlink" title="File-Per-Table Tablespaces"></a>File-Per-Table Tablespaces</h4><p>一个表，一个文件。</p>
+<h5 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h5><ul>
+<li>磁盘空间可以得到及时回收，如果用共享文件，比如System就不能。特别是例如Alter Table这样的表复制操作，效果更加显著。</li>
+<li>删表速度更快</li>
+<li>可以把表建在不同的盘上，提升IO</li>
+<li>支持更多的数据类型</li>
+<li>减少系统恢复时间</li>
+<li>单表备份</li>
+<li>单表尺寸检测</li>
+<li>多表同时写入</li>
+<li>单表尺寸可以大到64T</li>
+</ul>
+<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ul>
+<li>空间复用率低</li>
+<li>fsync只能针对单文件，这就导致很多表。就会有很多fsync</li>
+<li>mysqld需要位置一堆文件描述符</li>
+<li>碎片化明显</li>
+<li>在删表的时候，会在Buffer Pool中扫描是否存在需要删掉的内容，这个过程有点长</li>
+</ul>
+<h4 id="General-Tablespaces"><a href="#General-Tablespaces" class="headerlink" title="General Tablespaces"></a>General Tablespaces</h4><p>这是一个使用Create tablespace生成的共享空间，和File-Per-Table差不多</p>
+<h5 id="一些好处"><a href="#一些好处" class="headerlink" title="一些好处"></a>一些好处</h5><ol>
+<li>多表共享一个文件</li>
+<li>节约内存</li>
+<li>便于管理</li>
+<li>支持多种数据类型</li>
+</ol>
+<h4 id="Undo-Tablespaces"><a href="#Undo-Tablespaces" class="headerlink" title="Undo Tablespaces"></a>Undo Tablespaces</h4><p>用于存放Undo logs，位于undo log segments是rollback segments的一部分。<br>默认有两个undo tablespaces，undo tablespaces至少要两个，以应对删除undo tablespaces的情况。(有的时候Undo tablespaces太大了，需要定期清理一下，该过程可以自动也可以手动，但是在系统没有什么负载的时候清理)<br>默认位于MySQL根目录下。</p>
+<h4 id="Temporary-Tablespaces"><a href="#Temporary-Tablespaces" class="headerlink" title="Temporary Tablespaces"></a>Temporary Tablespaces</h4><h5 id="Session-Temporary-Tablespaces"><a href="#Session-Temporary-Tablespaces" class="headerlink" title="Session Temporary Tablespaces"></a>Session Temporary Tablespaces</h5><p>用于存储用户创建的临时表，以及跨表查询的优化。<br>一个Session最多可以到临时表池中申请两个临时表空间，一个用于存储用户的查询结果，另外一个用于存储优化器生成的临时表。<br>临时表池中开始时有10个表，其空间不会缩小，但会在不够时自动扩容。其内容在关闭或重启时自动清空。</p>
+<h5 id="Global-Temporary-Tablespaces"><a href="#Global-Temporary-Tablespaces" class="headerlink" title="Global Temporary Tablespaces"></a>Global Temporary Tablespaces</h5><p>用于存储rollback segments中，与用户创建的临时表有关的内容。在系统关闭时自动清空，系统启动时又自动创建，如果不能创建，MySQL就会启动失败。一般由于上一次创建的Global Temporary Tablespaces还存在，此时手动删掉再重启即可。</p>
+<h4 id="系统离线时移动表文件"><a href="#系统离线时移动表文件" class="headerlink" title="系统离线时移动表文件"></a>系统离线时移动表文件</h4><p>过于技术和实际化，没啥好看的</p>
+<h3 id="Doublewrite-Buffer"><a href="#Doublewrite-Buffer" class="headerlink" title="Doublewrite Buffer"></a>Doublewrite Buffer</h3><p>在数据从buffer pool写到磁盘之前，需要在Doublewrite Buffer中缓存一下。因为要找到正确的写入页又比较花数，在这个过程中一旦crash，需要写入的内容就没了。虽然诗句被写了两次，但由于Doublewrite Buffer是大块连续写，还用上了fsync，所以速度非常快。在旧版本中，Doublewrite Buffer位于系统表空间中；而新版本则位于专门的Doublewrite Buffer文件中。</p>
+<h3 id="Redo-Log"><a href="#Redo-Log" class="headerlink" title="Redo Log"></a>Redo Log</h3><p>Redo Log主要用于将未完成的事务从crash中恢复过来，具体是将buffer pool里尚未被写入磁盘的内容持久化下来，出现意外后，内存中的内容就会丢失，重启时读入持久化的结果，将系统状态恢复到崩溃之前的状态。里面一般存的是页的修改，而不是命令。在需要恢复的时候，系统会再执行相关语句一遍，从而将系统恢复到崩溃之前的状态。</p>
+<h3 id="Undo-Logs"><a href="#Undo-Logs" class="headerlink" title="Undo Logs"></a>Undo Logs</h3><p>Undo Logs是单个事务的undo log的集合。每一条undo log里都包含了如何将该事务对主索引的修改复原的内容，如果另外一个事务需要看历史数据，则使用undo log里的内容，找到历史数据的内容。</p>
+<h4 id="存在哪里"><a href="#存在哪里" class="headerlink" title="存在哪里"></a>存在哪里</h4><p>Undo logs位于undo log segments里，其位于rollback segments的一部分，具体是undo tablespaces和global temporary tablespace中。Global temporary tablespace中的部分用于恢复用户的临时表，这些logs是不会存在Redo Log里的，他们只会用于回滚操作，以避免不必要的IO。</p>
+<p>Undo logs也是可以加密的，具体细节以后看。</p>
+<h4 id="数量"><a href="#数量" class="headerlink" title="数量"></a>数量</h4><p>每一个undo tablespaces和global temporary tablespace都默认包含128个rollback segments(可以通过参数指定).每一个rollback segments支持的事务数，由其内部的undo slots数量和每个事务需要的undo logs数共同决定。一个rollback segments正好一页，而一个undo slot占16byte，所以很容易就能算出来undo slots的数量。</p>
+<p>一个事务最多可以分到4个undo logs，分别用于处理</p>
+<ol>
+<li>INSERT定义表</li>
+<li>UPDATE/DELETE定义表</li>
+<li>INSERT临时表</li>
+<li>UPDATE/DELETE临时表</li>
+</ol>
+<p>undo log一旦被指定，将伴随该事务的整个生命周期，中途不会被指定给其他事务。</p>
+<h5 id="从undo-logs数量估算并发事务上限"><a href="#从undo-logs数量估算并发事务上限" class="headerlink" title="从undo logs数量估算并发事务上限"></a>从undo logs数量估算并发事务上限</h5><ol>
+<li>如果每个事务都不会既INSERT又DELETE: (innodb_page_size / 16) <em> innodb_rollback_segments </em> number of undo tablespaces</li>
+<li>每个事务既INSERT又DELETE: (innodb_page_size / 16 / 2) <em> innodb_rollback_segments </em> number of undo tablespaces</li>
+<li>事务只会在临时表中INSERT：(innodb_page_size / 16) * innodb_rollback_segments</li>
+<li>事务在临时表中既INSERT又DELETE: (innodb_page_size / 16 / 2) * innodb_rollback_segments</li>
+</ol>
+<h4 id="和binlog的关系"><a href="#和binlog的关系" class="headerlink" title="和binlog的关系"></a>和binlog的关系</h4><p>binlog是MySQL最重要的日志，由高层的MySQL组件记录，共有两种，包括Statement，以事件的形式记录了所有DDL，DML以及运行用时；Row，记录每一条数据的修改情况。此外，给二进制日志是事务安全的。两个最主要的用途，主从复制，数据恢复</p>
+<p>什么是事务安全的呢？</p>
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-architecture.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/innodb-architecture.html</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-in-memory-structures.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/innodb-in-memory-structures.html</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-on-disk-structures.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/innodb-on-disk-structures.html</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>InnoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>InnoDB-Lock/Transaction</title>
+    <url>/2020/06/21/innodb4/</url>
+    <content><![CDATA[<p>并发，重头戏</p>
+<a id="more"></a>
+<h2 id="Locking"><a href="#Locking" class="headerlink" title="Locking"></a>Locking</h2><h3 id="Shared-and-Exclusive-Locks"><a href="#Shared-and-Exclusive-Locks" class="headerlink" title="Shared and Exclusive Locks"></a>Shared and Exclusive Locks</h3><p>InnoDB默认使用的是行级锁(row-level locking)，具体分成两种，shared(s) locks和exclusive(x) locks。前者用于读，后者用于更改与删除。</p>
+<ul>
+<li>T1 s lock-&gt;T2 s lock get immediately</li>
+<li>T1 s lock-&gt;T2 x lock hold on</li>
+<li>T2 x lock-&gt;T2 any lock hold on</li>
+</ul>
+<h3 id="Intention-Locks"><a href="#Intention-Locks" class="headerlink" title="Intention Locks"></a>Intention Locks</h3><p>意向锁(intention locks)是一种表锁，用于告诉其他用户该事务在之后的操作中会对行进行什么类型的锁。</p>
+<ul>
+<li>Intention shared lock(IS)：意向共享锁</li>
+<li>Intention exclusive lock(IX)：意向排他锁</li>
+</ul>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
+<li>事务在申请行级共享锁之前，需要申请IS锁</li>
+<li>事务在申请行级排他锁之前，需要申请IX锁</li>
+</ul>
+<h4 id="冲突关系"><a href="#冲突关系" class="headerlink" title="冲突关系"></a>冲突关系</h4><p>下表为普通的表锁与意向锁之间的冲突关系，一旦出现冲突，只有当前的锁被释放才能够进行进一步的操作。此外，意向锁只会和表锁产生冲突，行锁粒度的冲突交由行锁去处理，所以IS和IX可以共存。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>x</th>
+<th>IX</th>
+<th>S</th>
+<th>IS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>IX</td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+</tr>
+<tr>
+<td>S</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>IS</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Record-Locks"><a href="#Record-Locks" class="headerlink" title="Record Locks"></a>Record Locks</h3><p>用于锁定索引本身的锁，不论是主索引还是辅助索引。例如</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT c1 FROM t WHERE c1 &#x3D; 10 FOR UPDATE;</span><br><span class="line">用于锁定所有c1为10的记录，防止其他事务插入&#x2F;删除&#x2F;修改c1为10的数据</span><br></pre></td></tr></table></figure>
+<h3 id="Gap-Locks"><a href="#Gap-Locks" class="headerlink" title="Gap Locks"></a>Gap Locks</h3><p>Record Locks的进阶版，选中一个范围内的数据，不允许其他事务在这个范围内进行增删改查。Gap Locks可用于单索引，多索引，甚至没有索引也是可以的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT c1 FROM t WHERE c1 BETWEEN 10 AND 20 FOR UPDATE;</span><br></pre></td></tr></table></figure>
+<p>对于读unique列的操作，加上Gap Locks是多此一举的行为。多个Gap Locks是可以被Merge的，在真正的修改操作进行前，并不会导致任何冲突。</p>
+<h3 id="Next-Key-Locks"><a href="#Next-Key-Locks" class="headerlink" title="Next-Key Locks"></a>Next-Key Locks</h3><p>Next-Key Locks是Record Locks和Gap Locks的复合体。该操作并不需要手动指定锁的范围，而是锁住相关行的前/后一行之间的间隙。</p>
+<h3 id="Insert-Intention-Locks"><a href="#Insert-Intention-Locks" class="headerlink" title="Insert Intention Locks"></a>Insert Intention Locks</h3><p>Gap锁的一种，用于表示该事务会在一定范围内插入数据，以提高并行插入的能力，如果两个事务的Insert Intention Locks没有重叠区域，则把他们一起运行也不会对系统有什么不良影响。</p>
+<h3 id="AUTO-INC-Locks"><a href="#AUTO-INC-Locks" class="headerlink" title="AUTO-INC Locks"></a>AUTO-INC Locks</h3><p>特殊的表锁，用于自增主键</p>
+<h3 id="Predicate-Locks-for-Spatial-Indexs"><a href="#Predicate-Locks-for-Spatial-Indexs" class="headerlink" title="Predicate Locks for Spatial Indexs"></a>Predicate Locks for Spatial Indexs</h3><p>空间索引(地理数据之类的二维索引)不在考虑范围内，所以忽略</p>
+<h2 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction</h2><h3 id="Transaction-Isolation"><a href="#Transaction-Isolation" class="headerlink" title="Transaction Isolation"></a>Transaction Isolation</h3><h4 id="Read-Uncommited"><a href="#Read-Uncommited" class="headerlink" title="Read Uncommited"></a>Read Uncommited</h4><p>完全不加锁，一切随缘，脏读幻读都有可能</p>
+<h4 id="Read-Committed"><a href="#Read-Committed" class="headerlink" title="Read Committed"></a>Read Committed</h4><p>单次读的一致性有保障，但一个事务中的所有读的一致性没有保障，有可能出现幻读</p>
+<ul>
+<li>读一般只会上行锁，只有在外键和重复键检查的时候才会用Gap Locks</li>
+<li>对于删除和修改，依然使用行锁，在Where筛选结束后，将会释放那些无关的行，虽然概率小，但还是会死锁</li>
+<li>要修改已经被锁上的行时，MySQL会先读一下，初步确定是否符合Where条件，符合条件后又再次进行上锁与读取的操作</li>
+</ul>
+<h4 id="Repeatable-Read-default"><a href="#Repeatable-Read-default" class="headerlink" title="Repeatable Read(default)"></a>Repeatable Read(default)</h4><p>一个事务的读一致性有所保障</p>
+<ul>
+<li>Unique Index，只会锁一行</li>
+<li>其他的，上Gap Locks/Next-Key Locks</li>
+</ul>
+<h4 id="Serializable"><a href="#Serializable" class="headerlink" title="Serializable"></a>Serializable</h4><p>最高强度的隔离，会在每一句SELECT之后加上’FOR SHARE’</p>
+<h3 id="AutoCommit-Commit-amp-Rollback"><a href="#AutoCommit-Commit-amp-Rollback" class="headerlink" title="AutoCommit, Commit&amp;Rollback"></a>AutoCommit, Commit&amp;Rollback</h3><h4 id="AutoCommit"><a href="#AutoCommit" class="headerlink" title="AutoCommit"></a>AutoCommit</h4><p>每个SQL语句都会构成一个事务，没有错误的事务被执行后都会被Commit，错误的执行会被Rollback</p>
+<h4 id="Commit"><a href="#Commit" class="headerlink" title="Commit"></a>Commit</h4><p>意味着该事务的操作会被其他事务看到</p>
+<h3 id="Consistent-Nonlocking-Reads"><a href="#Consistent-Nonlocking-Reads" class="headerlink" title="Consistent Nonlocking Reads"></a>Consistent Nonlocking Reads</h3><p>使用MVCC+s locks让多个事务同时读写数据，而且不会互相干扰，具体效果依据隔离程度决定。在以下情况，该功能不可用</p>
+<ul>
+<li>DROP TABLE</li>
+<li>ALTER TABLE</li>
+</ul>
+<h3 id="Locking-Reads"><a href="#Locking-Reads" class="headerlink" title="Locking Reads"></a>Locking Reads</h3><p>普通的SELECT可能隔离强度不足，手动加锁</p>
+<ul>
+<li>SELECT FOR SHARE</li>
+<li>SELECT FOR UPDATE</li>
+</ul>
+<h2 id="Deadlocks"><a href="#Deadlocks" class="headerlink" title="Deadlocks"></a>Deadlocks</h2><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>死锁是由写操作产生的，所以改变隔离状态不会让死锁问题得到改善。</p>
+<ul>
+<li>写粒度要小</li>
+<li>多用事务，少用表锁</li>
+</ul>
+<h3 id="Detection-and-Rollback"><a href="#Detection-and-Rollback" class="headerlink" title="Detection and Rollback"></a>Detection and Rollback</h3><ul>
+<li>碰撞检测(有向图找环)；如果出现超过200个事务在等待；也可以关掉使用事务超时进行判断</li>
+<li>选择插入/更新/删除行数最小的事务回滚</li>
+<li>InnoDB回滚时，会释放所有的锁。但是，存在个别情况，例如语句执行失败后，仅仅回滚这一条语句，则不会释放该语句的锁，因为InnoDB不存储SQL语句与锁的对应关系</li>
+<li>如果是SELECT在事务中调用预先设置好的内建函数，而且出现语句失败，则该语句会回滚，如果又进一步手动执行ROLLBACK，会导致整个事务一起回滚</li>
+</ul>
+<h2 id="Scheduling"><a href="#Scheduling" class="headerlink" title="Scheduling"></a>Scheduling</h2><p>Contention-Aware Transaction Scheduling(CATS)，基于权重决定事务优先关系，权重由以下内容决定</p>
+<ul>
+<li>为阻塞事务数目多的事务更高的权重</li>
+<li>阻塞数目一样多，等待时间长的更高权重</li>
+</ul>
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-transaction-model.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-transaction-model.html</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>InnoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>InnoDB-Disk IO &amp; File Space</title>
+    <url>/2020/06/21/innodb5/</url>
+    <content><![CDATA[<p>空间管理</p>
+<a id="more"></a>
+<h2 id="InnoDB-Disk-I-O"><a href="#InnoDB-Disk-I-O" class="headerlink" title="InnoDB Disk I/O"></a>InnoDB Disk I/O</h2><p>InnoDB使用异步磁盘IO，创建许多控制IO操作的进程，从而在进行其他数据库操作的同时依然能够把内容写到磁盘里。在进程内部，写入操作依然是同步的，并不是使用系统原生的异步IO API。</p>
+<h3 id="Read-Ahead"><a href="#Read-Ahead" class="headerlink" title="Read-Ahead"></a>Read-Ahead</h3><p>InnoDB认为部分数据有可能会很快用到时，会将其从磁盘载入内存中(Buffer Pool)，为实现大块连续读，InnoDB有两种策略</p>
+<ul>
+<li>连续Read-Ahead，如果InnoDB注意到相关语句对某个tablespace的段访问是连续的，它会将整段内容提前载入到内存中</li>
+<li>随机Read-Ahead，如果InnoDB注意到直接载入一整个tablespace会更快，它会直接把整个tablespace载入内存</li>
+</ul>
+<h3 id="Doublewrite-Buffer"><a href="#Doublewrite-Buffer" class="headerlink" title="Doublewrite Buffer"></a>Doublewrite Buffer</h3><p>见前文中<a href="/2020/06/21/innodb3#Doublewrite-Buffer">有关内容</a></p>
+<h2 id="File-Space-Management"><a href="#File-Space-Management" class="headerlink" title="File Space Management"></a>File Space Management</h2><p>InnoDB中的数据库存在文件中，所有内容写在一个文件还是分开写，都使用tablespaces的配置决定</p>
+<h3 id="Pages-Extents-Segments-and-Tablespaces"><a href="#Pages-Extents-Segments-and-Tablespaces" class="headerlink" title="Pages, Extents, Segments, and Tablespaces"></a>Pages, Extents, Segments, and Tablespaces</h3><h4 id="Page"><a href="#Page" class="headerlink" title="Page"></a>Page</h4><p>Page是数据库的最小磁盘空间管理单位，其尺寸默认为16K，可以修改。其结构为</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>长度/字节</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File Header</td>
+<td>38</td>
+<td>页的通用信息</td>
+</tr>
+<tr>
+<td>Page Header</td>
+<td>56</td>
+<td>数据页专有信息</td>
+</tr>
+<tr>
+<td>Infimum+supremum</td>
+<td>26</td>
+<td>两个虚拟行记录</td>
+</tr>
+<tr>
+<td>User Records</td>
+<td>Not Fix</td>
+<td>实际存储的行记录</td>
+</tr>
+<tr>
+<td>Free Space</td>
+<td>Not Fix</td>
+<td>空闲空间</td>
+</tr>
+<tr>
+<td>Page Directory</td>
+<td>Not Fix</td>
+<td>某些记录的相对位置</td>
+</tr>
+<tr>
+<td>File Tail</td>
+<td>8</td>
+<td>校验</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Extents"><a href="#Extents" class="headerlink" title="Extents"></a>Extents</h4><p>Extents是由许多Page组成的空间管理单位，其尺寸对照表如下</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Page尺寸</th>
+<th>Extent尺寸</th>
+<th>Extent中的Page数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4K</td>
+<td>1M</td>
+<td>256</td>
+</tr>
+<tr>
+<td>8K</td>
+<td>1M</td>
+<td>128</td>
+</tr>
+<tr>
+<td>16K</td>
+<td>1M</td>
+<td>64</td>
+</tr>
+<tr>
+<td>32K</td>
+<td>2M</td>
+<td>64</td>
+</tr>
+<tr>
+<td>64K</td>
+<td>4M</td>
+<td>64</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="Segment"><a href="#Segment" class="headerlink" title="Segment"></a>Segment</h4><p>Segment是由Extent构成的更高一级的单位。在InnoDB中，Tablespace的“文件”被称为Segment，注意，这个Segment和Rollback Segment什么的不一样，但是Rollback Segment会包含很多个Tablespace中的Segment。当Segment的空间不足时，InnoDB会先申请32 Pages，如果还需要申请，则会申请1个Extent。当Segment变得过大，InnoDB会一次获取4个Extents以保证数据的连续性。</p>
+<p>一个Tablespace中包含两个Segment，一个用于存非叶子节点，一个用于存叶子节点，以保证叶子节点读写的连续性。</p>
+<p>一些Page保存的是其他page的bitmap，所以有的时候Segment中只会包含零散的几个页而非整Extent。</p>
+<p>删除操作的时候，会依据是否释放整Page或是整Extent来决定释放空间；删除表和行可以释放空间，但只在purge后空间才会被释放。</p>
+<h3 id="Page-and-Row"><a href="#Page-and-Row" class="headerlink" title="Page and Row"></a>Page and Row</h3><p>最长的行长度应当小于页的一半，如果出现过长的行，该行会被存在扩展页外存储(External off-page)中，直到其长度能被一页存下再挪回页中。</p>
+<h4 id="Row"><a href="#Row" class="headerlink" title="Row"></a>Row</h4><p>行结构</p>
+<ul>
+<li>变长字段长度列表: 存储着所有变长字段的数据占用的字段长度</li>
+<li>NULL标志位: 可以为NULL的列与标记为NULL的列</li>
+<li>记录头信息</li>
+<li>列1</li>
+<li>列2</li>
+<li>…</li>
+</ul>
+<p>记录头信息格式如下</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>大小/bit</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预留位</td>
+<td>2</td>
+<td>没用</td>
+</tr>
+<tr>
+<td>delete_mask</td>
+<td>1</td>
+<td>删除标记</td>
+</tr>
+<tr>
+<td>min_rec_mask</td>
+<td>1</td>
+<td>非叶子节点中的最小记录</td>
+</tr>
+<tr>
+<td>n_owned</td>
+<td>4</td>
+<td>当前记录的记录数</td>
+</tr>
+<tr>
+<td>heap_no</td>
+<td>13</td>
+<td>当前记录在堆中的位置信息</td>
+</tr>
+<tr>
+<td>record_type</td>
+<td>3</td>
+<td>记录类型，0:叶节点，1:非叶子节点，2:最小记录，3:最大记录</td>
+</tr>
+<tr>
+<td>next_record</td>
+<td>16</td>
+<td>下一条记录的相对位置</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="External-off-page"><a href="#External-off-page" class="headerlink" title="External off-page"></a>External off-page</h4><ul>
+<li>COMPACT and REDUNDANT: 当数据在Page中放不下时，InnoDB会在Page中存前768个字节，并将其他数据存到溢出页中，每个列都有自己的溢出页。该768个字符的前20个记录了该数据的长度以及多于内容在溢出页中的指针。</li>
+<li>DYNAMIC and COMPRESSED: InnoDB只会在Page内存20个字符的内容，表示长度和指针。</li>
+</ul>
+<h2 id="Checkpoints"><a href="#Checkpoints" class="headerlink" title="Checkpoints"></a>Checkpoints</h2><p>InnoDB只会小批量地将Buffer Pool中的内容写到磁盘中以避免对用户体验造成影响。</p>
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-management.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/innodb-disk-management.html</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>InnoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kerberos</title>
+    <url>/2020/07/07/kerberos/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>由于某些原因，需要使用kerberos登录服务器，但由于VScode没有原生支持，所以在这个地方写一下解决方法。</p>
+<a id="more"></a>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>安装Kerberos等软件，按照要求进行配置</li>
+<li>安装PuTTY</li>
+<li>在PuTTY中设置一个名为remote的session，需要包括以下内容<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">Session-&gt;</span><span class="bash">Host Name</span></span><br><span class="line"><span class="meta">Connection-&gt;</span><span class="bash">SSH-&gt;Auth-&gt;GSSAPI</span></span><br><span class="line"><span class="meta">Connection-&gt;</span><span class="bash">Data</span></span><br></pre></td></tr></table></figure></li>
+<li>编写C:/Users/<name>/ssh.bat脚本<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo OpenSSH</span><br><span class="line">SET mypath=%~dp0</span><br><span class="line">powershell %mypath%ssh.ps1</span><br></pre></td></tr></table></figure></li>
+<li>同目录下编写脚本ssh.ps1<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ArgArray = [System.Collections.ArrayList]<span class="variable">$Args</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash">ind = <span class="variable">$ArgArray</span>.IndexOf(<span class="string">"-F"</span>)</span></span><br><span class="line">if ($ind -ge 0) &#123;</span><br><span class="line">    $ArgArray.RemoveAt($ind)</span><br><span class="line">    $ArgArray.RemoveAt($ind)</span><br><span class="line">&#125;</span><br><span class="line">Write-Host $ArgArray</span><br><span class="line">&amp; 'C:\Program Files\PuTTY\plink.exe' $ArgArray</span><br></pre></td></tr></table></figure></li>
+<li>修改vscode中的”remote.SSH.path”值，将其改为ssh.bat的路径</li>
+<li>在ssh配置中添加以下内容<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Host remote #上文中名为remote的配置</span><br><span class="line">    HostName remote</span><br><span class="line">    User XXXX</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>操作指南</category>
+      </categories>
+      <tags>
+        <tag>ssh</tag>
+        <tag>vscode</tag>
+        <tag>kerberos</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指Offer-面试的流程</title>
+    <url>/2020/06/23/offer1/</url>
+    <content><![CDATA[<p>周日就要面试了，才突然发现没有正式地学习过面试本身，补一下课</p>
+<a id="more"></a>
+<h2 id="面试的三种形式"><a href="#面试的三种形式" class="headerlink" title="面试的三种形式"></a>面试的三种形式</h2><h3 id="电话面试"><a href="#电话面试" class="headerlink" title="电话面试"></a>电话面试</h3><ul>
+<li>电话充好电</li>
+<li>不要太嘈杂</li>
+<li>要尽可能地多问问题的细节</li>
+<li>尽可能地用形象的语言将细节说清楚</li>
+<li>听不懂/不理解的话要多问</li>
+<li>用自己的理解复述一遍问题</li>
+</ul>
+<h3 id="共享桌面"><a href="#共享桌面" class="headerlink" title="共享桌面"></a>共享桌面</h3><h4 id="思考清楚再开始写代码"><a href="#思考清楚再开始写代码" class="headerlink" title="思考清楚再开始写代码"></a>思考清楚再开始写代码</h4><ol>
+<li>明确解题思路</li>
+<li>估计时空复杂度</li>
+<li>边界条件</li>
+<li>写</li>
+</ol>
+<h4 id="良好的函数命名和缩进对齐"><a href="#良好的函数命名和缩进对齐" class="headerlink" title="良好的函数命名和缩进对齐"></a>良好的函数命名和缩进对齐</h4><h4 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h4><ul>
+<li>先给出测试样例</li>
+<li>再开始写代码</li>
+<li>非常有用</li>
+<li>代码出错，也不要着急，耐心调试</li>
+</ul>
+<h3 id="现场面试"><a href="#现场面试" class="headerlink" title="现场面试"></a>现场面试</h3><ul>
+<li>规划路线，估算时间</li>
+<li>准备得体的衣服</li>
+<li>注意邀请函内的面试流程</li>
+<li>注意提前想好几个问题</li>
+</ul>
+<h2 id="面试的三个环节"><a href="#面试的三个环节" class="headerlink" title="面试的三个环节"></a>面试的三个环节</h2><h3 id="行为面试"><a href="#行为面试" class="headerlink" title="行为面试"></a>行为面试</h3><h4 id="开始：一个简短的自我介绍（主要的学习，工作经历，30s-1min）"><a href="#开始：一个简短的自我介绍（主要的学习，工作经历，30s-1min）" class="headerlink" title="开始：一个简短的自我介绍（主要的学习，工作经历，30s-1min）"></a>开始：一个简短的自我介绍（主要的学习，工作经历，30s-1min）</h4><ul>
+<li>用于调整自己的状态</li>
+<li>更多只是一个暖场</li>
+</ul>
+<h4 id="问题：项目经历"><a href="#问题：项目经历" class="headerlink" title="问题：项目经历"></a>问题：项目经历</h4><p>使用STAR模型描述项目</p>
+<ul>
+<li>Situation：项目背景</li>
+<li>Task：完成的任务，注意参与与负责的区别，一旦说了负责，就会被问到架构设计，核心算法以及团队合作</li>
+<li>Action：怎么做的，设计/开放/测试</li>
+<li>Result：贡献，性能优化/维护/测试最好带上数字；功能的话则说具体的功能内容</li>
+</ul>
+<p>其他问题</p>
+<ul>
+<li>最大的问题，如何解决</li>
+<li>学到了什么</li>
+<li>和其他成员有没有冲突，如何解决冲突</li>
+</ul>
+<p>提示</p>
+<ul>
+<li>背景可以简化一些</li>
+<li>工作和成绩才是重头</li>
+</ul>
+<h4 id="技能：用词"><a href="#技能：用词" class="headerlink" title="技能：用词"></a>技能：用词</h4><ul>
+<li>参与/负责：做了一些工作/对整个项目了如指掌</li>
+<li>了解/熟悉/精通：上过课，看过书，没有做过项目/使用某项技术较长时间，具有相关文档可以解决一些问题/得心应手，能够解决同事的问题，不能随便写</li>
+<li>应聘原因：前一项工作得不到发展/刚到厌倦</li>
+</ul>
+<h3 id="技术面"><a href="#技术面" class="headerlink" title="技术面"></a>技术面</h3><ul>
+<li>基础知识：语言，数据结构，算法</li>
+<li>代码质量：边界条件，特殊输入，先加限制，再逐渐扩充，鲁棒性，尤其是空指针和错误处理，先写测试样例非常重要</li>
+<li>分析思路：举例将其具体化，用画图表示数据结构，尝试分解问题</li>
+<li>优化效率：</li>
+<li>综合能力：沟通，理解，学习能力，抽象能力等</li>
+</ul>
+<h3 id="提问环境"><a href="#提问环境" class="headerlink" title="提问环境"></a>提问环境</h3><p>最好提前准备二到三个问题，以备不时之需。</p>
+<h4 id="不要问的问题"><a href="#不要问的问题" class="headerlink" title="不要问的问题"></a>不要问的问题</h4><ul>
+<li>和自己的职位没有关系的问题</li>
+<li>不要问薪水</li>
+<li>不要问面试结果</li>
+</ul>
+<h4 id="推荐问题：职位或项目相关的问题"><a href="#推荐问题：职位或项目相关的问题" class="headerlink" title="推荐问题：职位或项目相关的问题"></a>推荐问题：职位或项目相关的问题</h4><ul>
+<li>做好功课，了解时间，业务和职位要求</li>
+<li>留心面试官说过的话</li>
+</ul>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>剑指Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指Offer-基础知识</title>
+    <url>/2020/06/23/offer2/</url>
+    <content><![CDATA[<p>基础知识很重要，语言方面多看书，数据结构与算法不如去刷LeetCode</p>
+<a id="more"></a>
+<h2 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h2><p>只关注那些和我有关的语言，Perl,C#,object C啥的就不考虑了</p>
+<h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><p>语言面试的三种类型</p>
+<ol>
+<li>直接问对C++语言的理解：类型转换的关键字，变量申请的顺序等，sizeof相关</li>
+<li>给出实现准备好的代码：要求对考点有较为深刻的认识，推荐书籍：Effective C++突击时用，C++Primer学习时用，Inside C++ Object Model对类的理解，The C++ Programming Language深入理解</li>
+<li>写代码定义好的一个类型的成员函数：涉及重载，析构，构造等</li>
+</ol>
+<p>需要注意异常安全性，例如内存不足会带来什么后果之类的</p>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p>常见数据结构</p>
+<ul>
+<li>数组</li>
+<li>字符串</li>
+<li>链表</li>
+<li>树</li>
+<li>栈</li>
+<li>队列</li>
+</ul>
+<p>tips:</p>
+<ul>
+<li>数组：从后往前复制省空间</li>
+<li>链表：单向链表，环链表，双向链表，复杂链表</li>
+<li>树：红黑树，堆，树的遍历，树的重构</li>
+<li>栈与队列：</li>
+</ul>
+<h3 id="算法与数据操作"><a href="#算法与数据操作" class="headerlink" title="算法与数据操作"></a>算法与数据操作</h3><p>常见算法</p>
+<ul>
+<li>查找：顺序，二分，查找，二叉：要能够手写二分</li>
+<li>排序：插入排序，冒泡排序，归并排序，快速排序</li>
+<li>递归与循环：一般递归比较简洁，优先选择递归</li>
+<li>位运算</li>
+</ul>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>剑指Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指Offer-代码质量，问题分析，优化</title>
+    <url>/2020/06/23/offer3/</url>
+    <content><![CDATA[<ul>
+<li>好看的结构，明确的命名，以及异常处理</li>
+<li>画图，举例，分解</li>
+<li>空间优化，时间优化</li>
+</ul>
+<a id="more"></a>
+<h2 id="代码质量"><a href="#代码质量" class="headerlink" title="代码质量"></a>代码质量</h2><h3 id="完整性"><a href="#完整性" class="headerlink" title="完整性"></a>完整性</h3><ol>
+<li>功能测试</li>
+<li>边界测试</li>
+<li>负面测试</li>
+</ol>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><ol>
+<li>使用返回值告知执行结果</li>
+<li>全局变量</li>
+<li>抛出异常</li>
+</ol>
+<h3 id="鲁棒性"><a href="#鲁棒性" class="headerlink" title="鲁棒性"></a>鲁棒性</h3><ol>
+<li>不能存在崩溃风险，检查输入的合法性</li>
+</ol>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h3 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h3><p>将复杂的数据结构或操作形象化</p>
+<h3 id="举例子"><a href="#举例子" class="headerlink" title="举例子"></a>举例子</h3><p>将抽象问题具体化</p>
+<h3 id="分解"><a href="#分解" class="headerlink" title="分解"></a>分解</h3><p>将复杂问题简单化</p>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><h3 id="时间优化"><a href="#时间优化" class="headerlink" title="时间优化"></a>时间优化</h3><ul>
+<li>用指针传复杂数据类型</li>
+<li>递归与循环并不相同</li>
+</ul>
+<h4 id="空间优化"><a href="#空间优化" class="headerlink" title="空间优化"></a>空间优化</h4><ul>
+<li>时间和空间的权衡</li>
+</ul>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>剑指Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>剑指Offer-其他能力</title>
+    <url>/2020/06/23/offer4/</url>
+    <content><![CDATA[<p>其他不会系统考察但十分重要的能力</p>
+<a id="more"></a>
+<h2 id="沟通能力"><a href="#沟通能力" class="headerlink" title="沟通能力"></a>沟通能力</h2><ul>
+<li>沟通不是夸夸其谈</li>
+<li>不能不懂装懂</li>
+<li>可能涉及外语沟通</li>
+</ul>
+<h2 id="学习能力"><a href="#学习能力" class="headerlink" title="学习能力"></a>学习能力</h2><ul>
+<li>询问最近在学什么，做什么</li>
+<li>抛出一个新概念，现场写代码</li>
+</ul>
+<h2 id="善于提问"><a href="#善于提问" class="headerlink" title="善于提问"></a>善于提问</h2><ul>
+<li>有不理解的地方，及时提出，有的题目就是故意模棱两可的</li>
+</ul>
+<h2 id="知识迁移能力"><a href="#知识迁移能力" class="headerlink" title="知识迁移能力"></a>知识迁移能力</h2><ul>
+<li>类的思想</li>
+<li>GC的原理</li>
+</ul>
+<h2 id="抽象建模能力"><a href="#抽象建模能力" class="headerlink" title="抽象建模能力"></a>抽象建模能力</h2><ol>
+<li>选择合适的数据结构表述问题</li>
+<li>分析规律</li>
+</ol>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>剑指Offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>后工业社会的来临</title>
+    <url>/2020/06/01/post_industrial%20_era/</url>
+    <content><![CDATA[<p>边读边写，碎得一批<br><a id="more"></a></p>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><h3 id="序"><a href="#序" class="headerlink" title="序"></a>序</h3><h4 id="后工业时代的变化"><a href="#后工业时代的变化" class="headerlink" title="后工业时代的变化"></a>后工业时代的变化</h4><ul>
+<li>从制造业到服务业</li>
+<li>职业变化</li>
+<li>财产与教育</li>
+<li>金融资本与人力资本</li>
+<li>技术与智能技术</li>
+<li>基础设施</li>
+<li>知识的价值理论</li>
+</ul>
+<h4 id="生产的变化"><a href="#生产的变化" class="headerlink" title="生产的变化"></a>生产的变化</h4><ul>
+<li>一切系统都将变为电子系统</li>
+<li>小型化</li>
+<li>数字化</li>
+<li>软件化</li>
+</ul>
+<h4 id="新技术的特点"><a href="#新技术的特点" class="headerlink" title="新技术的特点"></a>新技术的特点</h4><p>新技术最为重要的事实是，它并不局限于某个鼓励的领域，而是遍布社会的一切领域，重组所有旧关系的一系列变革</p>
+<h4 id="国家的技术进步，需要三个特点"><a href="#国家的技术进步，需要三个特点" class="headerlink" title="国家的技术进步，需要三个特点"></a>国家的技术进步，需要三个特点</h4><ul>
+<li>国内稳定</li>
+<li>拥有为数众多的劳动力</li>
+<li>高效的教育与培训系统</li>
+</ul>
+<h4 id="社会预测的难点"><a href="#社会预测的难点" class="headerlink" title="社会预测的难点"></a>社会预测的难点</h4><ul>
+<li>难以获得一个统一的评价标准</li>
+<li>难以从数据中获取意义</li>
+</ul>
+<h4 id="章节摘要"><a href="#章节摘要" class="headerlink" title="章节摘要"></a>章节摘要</h4><ul>
+<li>讨论发达工业社会中的社会发展理论</li>
+<li>以美国为框架，讨论后工业社会中的：经济模式转变以及技术阶层的兴起</li>
+<li>讨论知识和技术</li>
+<li>经济化与社会化的逻辑</li>
+<li>科学的作用与认知的价值</li>
+<li>官僚决策与政治决策之间的关系</li>
+</ul>
+<h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><ul>
+<li>后资本主义社会统治阶级由国家行政官员，政府内占领领导地位的精英，和这些精英所代表的利益集团构成</li>
+<li>马克思认为，基本的生产方式和财产关系的性质才是主要的和有决定意义的</li>
+</ul>
+<h4 id="苏联"><a href="#苏联" class="headerlink" title="苏联"></a>苏联</h4><ul>
+<li>官僚代表有财产有教养的阶级的利益</li>
+<li>生产资料属于国家。但是，国家属于官僚</li>
+<li>苏联的五条出路：寡头政治，多元演化，技术适应，原教旨主义，政治瓦解</li>
+</ul>
+<h4 id="莫斯科"><a href="#莫斯科" class="headerlink" title="莫斯科"></a>莫斯科</h4><ul>
+<li>科学技术革命的实质是创造出一个高度熟练和技术化的“新工人阶级”</li>
+</ul>
+<h4 id="捷克"><a href="#捷克" class="headerlink" title="捷克"></a>捷克</h4><ul>
+<li>三个社会学问题：工人阶级未来的地位；新阶级系统会强调专业和技术阶层的主导地位；使用科学控制生产和维持未来社会，进而规定一个新的统治阶级的属性</li>
+</ul>
+<h4 id="现代社会最常见的难题"><a href="#现代社会最常见的难题" class="headerlink" title="现代社会最常见的难题"></a>现代社会最常见的难题</h4><p>官僚化和制度化</p>
+<h4 id="研究一个社会主要规律或重大领域的方法"><a href="#研究一个社会主要规律或重大领域的方法" class="headerlink" title="研究一个社会主要规律或重大领域的方法"></a>研究一个社会主要规律或重大领域的方法</h4><p>找到中轴体制或原理，他们既是其他体制的主轴，又向社会现有解决方案提出了重大挑战</p>
+<h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><h4 id="对人的态度"><a href="#对人的态度" class="headerlink" title="对人的态度"></a>对人的态度</h4><ul>
+<li>后工业时代的核心人物是专业人员，他们通过教育和培训把自己武装起来，以提供后工业社会所日益需要的各种技能</li>
+</ul>
+<h4 id="过度的阶段"><a href="#过度的阶段" class="headerlink" title="过度的阶段"></a>过度的阶段</h4><ul>
+<li>工业的发展必然伴随公共事业的扩张，增加非制造蓝领</li>
+<li>销售，金融，不动产的白领扩张</li>
+<li>保健与教育</li>
+</ul>
+<h4 id="决策"><a href="#决策" class="headerlink" title="决策"></a>决策</h4><p>社会活动的单位不是个人而是社群，人们必须达成社会决策</p>
+<h4 id="美国增长的限制因素"><a href="#美国增长的限制因素" class="headerlink" title="美国增长的限制因素"></a>美国增长的限制因素</h4><ul>
+<li>生产率的限制，扩张期一过，事情就变得比较麻烦了</li>
+<li>通货膨胀</li>
+<li>美国国情（产品售价高昂）</li>
+<li>最大的限制还是体制内部大量增加的矛盾需求</li>
+</ul>
+<h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h3><h4 id="两个变化"><a href="#两个变化" class="headerlink" title="两个变化"></a>两个变化</h4><ul>
+<li>速度的变化</li>
+<li>规模的变化</li>
+</ul>
+<h4 id="分化"><a href="#分化" class="headerlink" title="分化"></a>分化</h4><ul>
+<li>历史上一直在分化</li>
+<li>体制内的分化，专业化和局部化</li>
+</ul>
+<h4 id="知识"><a href="#知识" class="headerlink" title="知识"></a>知识</h4><h5 id="知识的分类"><a href="#知识的分类" class="headerlink" title="知识的分类"></a>知识的分类</h5><ol>
+<li>应用知识</li>
+<li>学术知识</li>
+<li>闲谈和消遣知识</li>
+<li>精神知识</li>
+<li>非必要知识</li>
+</ol>
+<h5 id="知识的计量"><a href="#知识的计量" class="headerlink" title="知识的计量"></a>知识的计量</h5><ul>
+<li>文献数量</li>
+<li>期刊数量</li>
+<li>图书馆藏书数量</li>
+</ul>
+<h4 id="技术进步"><a href="#技术进步" class="headerlink" title="技术进步"></a>技术进步</h4><h5 id="技术带来变化的5种方式"><a href="#技术带来变化的5种方式" class="headerlink" title="技术带来变化的5种方式"></a>技术带来变化的5种方式</h5><ul>
+<li>以更少的成本生产更多商品</li>
+<li>技术创造了工程师和技术人员</li>
+<li>技术建立了理性的新定义</li>
+<li>作为技术发展的结果，运输与通信使经济产生了新依赖，也带来了新的互动</li>
+<li>对空间和时间的认知发生了翻天覆地的变化</li>
+</ul>
+<h5 id="技术的预测"><a href="#技术的预测" class="headerlink" title="技术的预测"></a>技术的预测</h5><p>不期望获得个位数级别的预测，只是获得趋势即可</p>
+<h5 id="四种预测工具"><a href="#四种预测工具" class="headerlink" title="四种预测工具"></a>四种预测工具</h5><ul>
+<li>S型曲线和包络曲线：假定技术极限，再使用极限估算增长速度</li>
+<li>直观法：线性投影，效果比较有限</li>
+<li>形态设计</li>
+<li>关联树</li>
+</ul>
+<h4 id="技术变成生产力的速度变快"><a href="#技术变成生产力的速度变快" class="headerlink" title="技术变成生产力的速度变快"></a>技术变成生产力的速度变快</h4><h3 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h3><h4 id="批评的声音"><a href="#批评的声音" class="headerlink" title="批评的声音"></a>批评的声音</h4><ul>
+<li>愈来愈严重的问题：私人成本和社会成本的偏离</li>
+</ul>
+<h4 id="经济化模式"><a href="#经济化模式" class="headerlink" title="经济化模式"></a>经济化模式</h4><ul>
+<li>企业经济模式</li>
+</ul>
+<h4 id="企业"><a href="#企业" class="headerlink" title="企业"></a>企业</h4><ul>
+<li>不得了的发明</li>
+<li>需要寻找的是企业家和经理人之间的组织者</li>
+<li>利润和生产率是企业成功的两个标准</li>
+<li>在公司内部和社会成员之间有效分配资源，是企业经济模式的基本原理，也是整个经济体的基本原理</li>
+</ul>
+<h4 id="市场价值体系的缺点"><a href="#市场价值体系的缺点" class="headerlink" title="市场价值体系的缺点"></a>市场价值体系的缺点</h4><ul>
+<li>只对经济商品做出衡量</li>
+<li>外溢因素：个人收益提升，但社会成本被分配给整个社会</li>
+<li>私人消费是首要考量标准：公共商品失去地位</li>
+</ul>
+<h4 id="国民生产总值作为指标的不足"><a href="#国民生产总值作为指标的不足" class="headerlink" title="国民生产总值作为指标的不足"></a>国民生产总值作为指标的不足</h4><ul>
+<li>单项加法：不考虑社会福利因素</li>
+<li>私人成本和社会成本的背离</li>
+</ul>
+<h4 id="社会学模式"><a href="#社会学模式" class="headerlink" title="社会学模式"></a>社会学模式</h4><ul>
+<li>个人决策之和的不足</li>
+<li>社会决策才是真道</li>
+</ul>
+<h4 id="两个根本问题"><a href="#两个根本问题" class="headerlink" title="两个根本问题"></a>两个根本问题</h4><ul>
+<li>通过使所有人融入社会，有意识地建立社会公正</li>
+<li>公私部门的相对规模</li>
+</ul>
+<h4 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h4><ul>
+<li>各自公司私自规划，缺乏整体效果</li>
+<li>单一目标的谬误，缺乏多重后果的估计：通过政策和监管改善私人决策</li>
+<li>没有对技术流程和体制流程进行区分：社会评估，任何操作都会影响各个利益团体，需要决策</li>
+</ul>
+<h4 id="作为社会学机构的公司"><a href="#作为社会学机构的公司" class="headerlink" title="作为社会学机构的公司"></a>作为社会学机构的公司</h4><ul>
+<li>公司既是经济化的机构，也是其成员的生活方式</li>
+<li>公司的约束更多，且具有竞争性</li>
+</ul>
+<h4 id="公司的义务"><a href="#公司的义务" class="headerlink" title="公司的义务"></a>公司的义务</h4><ul>
+<li>职业满足感</li>
+<li>少数族群的就业</li>
+<li>相对工资</li>
+<li>内部分配</li>
+<li>社区责任</li>
+<li>环境责任</li>
+<li>道德争议</li>
+</ul>
+<h4 id="公司的转折点"><a href="#公司的转折点" class="headerlink" title="公司的转折点"></a>公司的转折点</h4><ul>
+<li>在股东，雇员，顾客和广大公众之间保持平衡</li>
+</ul>
+<h4 id="私有财产还是私有企业"><a href="#私有财产还是私有企业" class="headerlink" title="私有财产还是私有企业"></a>私有财产还是私有企业</h4><h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h3><h4 id="新算法"><a href="#新算法" class="headerlink" title="新算法"></a>新算法</h4><h5 id="亚当斯密的不足"><a href="#亚当斯密的不足" class="headerlink" title="亚当斯密的不足"></a>亚当斯密的不足</h5><ul>
+<li>个人商品（可分割）和社会商品（不可分割）应当分开</li>
+</ul>
+<h4 id="国家政策的新变化"><a href="#国家政策的新变化" class="headerlink" title="国家政策的新变化"></a>国家政策的新变化</h4><ul>
+<li>外交政策的影响</li>
+<li>社会的未来方向</li>
+<li>技术决策日益提升</li>
+</ul>
+<h4 id="大规模社会的特征"><a href="#大规模社会的特征" class="headerlink" title="大规模社会的特征"></a>大规模社会的特征</h4><ul>
+<li>社会结构方面：家庭与职业体系的分离</li>
+<li>文化方面：信仰的世俗化，个人体验的强调，追求新奇和侧记，教义与形式的结合</li>
+</ul>
+<h4 id="大规模社会的影响"><a href="#大规模社会的影响" class="headerlink" title="大规模社会的影响"></a>大规模社会的影响</h4><ul>
+<li>规模化</li>
+<li>全国化</li>
+<li>集中化与分散化</li>
+</ul>
+<h4 id="大规模带来的变化"><a href="#大规模带来的变化" class="headerlink" title="大规模带来的变化"></a>大规模带来的变化</h4><ul>
+<li>传统经济模式应当从私有制改为具有一定非盈利性质</li>
+</ul>
+<h4 id="社会结算系统"><a href="#社会结算系统" class="headerlink" title="社会结算系统"></a>社会结算系统</h4><ul>
+<li>衡量社会革新的成本和净收益</li>
+<li>衡量社会问题</li>
+<li>建立面对明确社会需求的绩效</li>
+<li>建立市场机会与社会流动性的指标</li>
+</ul>
+<h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h3><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li>生产力提高带来的分工细化与专业化需求</li>
+<li>官僚存在的必要性</li>
+<li>任何企业都应当在扩张，否则马上就会被投资人抛弃。对教育水平要求越低的行业越容易因此而自动化，人的因素被逐渐剔除。和发挥稳定的机械相比，培养熟练工人的成本太过高昂。</li>
+<li>就业流动性与工会</li>
+<li>政府将成为最大的职位提供者</li>
+<li>S形曲线</li>
+<li>管理学为什么不算在技术里</li>
+</ul>
+<h2 id="科学的社会研究"><a href="#科学的社会研究" class="headerlink" title="科学的社会研究"></a>科学的社会研究</h2><p>SSS: Social Study of Science</p>
+<h2 id="莫顿"><a href="#莫顿" class="headerlink" title="莫顿"></a>莫顿</h2><ol>
+<li>非常有名的社会学家</li>
+<li>工人结构社会学</li>
+<li>关于科学的社会学的研究者，也被称为科学社会学之父</li>
+<li>传统流派，比较主流</li>
+<li>科学制度社会学/科学建制社会学：偏制度研究/理想形态的标准的科学活动</li>
+</ol>
+<h2 id="其他学派"><a href="#其他学派" class="headerlink" title="其他学派"></a>其他学派</h2><ol>
+<li>偏后现代研究</li>
+<li>SSK：科学知识社会学：关注知识本身和事实如何</li>
+</ol>
+<h2 id="基础理论"><a href="#基础理论" class="headerlink" title="基础理论"></a>基础理论</h2><h3 id="科学家社会角色理论"><a href="#科学家社会角色理论" class="headerlink" title="科学家社会角色理论"></a>科学家社会角色理论</h3><h4 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h4><p>有一定的社会地位，关系和联系的社会行为</p>
+<h4 id="历史发展与内核变化"><a href="#历史发展与内核变化" class="headerlink" title="历史发展与内核变化"></a>历史发展与内核变化</h4><p>这个角色的出现是秩序性，规范性和体制性的科学研究活动的标识：科学的职业化</p>
+<ol>
+<li>英国皇家科学院</li>
+<li>法兰西皇家科学院</li>
+</ol>
+<h4 id="什么叫职业科学家（科学家的精神气质）"><a href="#什么叫职业科学家（科学家的精神气质）" class="headerlink" title="什么叫职业科学家（科学家的精神气质）"></a>什么叫职业科学家（科学家的精神气质）</h4><ol>
+<li>每个人都有从事研究的权利</li>
+<li>需要交流，不能垄断知识成果</li>
+<li>探求真理是职业科学家的唯一目的，不是个人利己的手段</li>
+<li>不迷信，有自己的想法</li>
+</ol>
+<h4 id="社会功能"><a href="#社会功能" class="headerlink" title="社会功能"></a>社会功能</h4><p>作为社会的知识精英，在自然世界的探索与人类社会合理化方向两方面发挥创造性的先驱作用。还有其他功能：政治，宣传，实用</p>
+<h3 id="莫顿学派在讨论的问题"><a href="#莫顿学派在讨论的问题" class="headerlink" title="莫顿学派在讨论的问题"></a>莫顿学派在讨论的问题</h3><p>职业科学家形成的社会，是否具有不平等现象</p>
+<h4 id="社会分层"><a href="#社会分层" class="headerlink" title="社会分层"></a>社会分层</h4><p>科学家社会是否分层</p>
+<h5 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h5><p>科学家不应由于专业而有别</p>
+<h5 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h5><ol>
+<li>总体而言，绝大多数科学家均位于整个社会的中上阶层 </li>
+<li>局部来看，等级森严，且非常陡峭的金字塔模型：对社会的贡献率，决定了科学家的地位；贡献率使用论文数量等参数计算</li>
+<li>从上至下被称为精英科学家，普通科学家，较次的科学家</li>
+<li>数量比：1个诺贝尔：13个院士：2400个小有成就的科学家：2600小有影响的博士和博士后：4800被NSF认定的科学家：6400人口普查时自称的科学家</li>
+</ol>
+<h5 id="结构的说明"><a href="#结构的说明" class="headerlink" title="结构的说明"></a>结构的说明</h5><ol>
+<li>这个行当与其他行当的不同：只有取得被认可的成就才算是职业科学家的职责，非常看重知识的独创性，一旦做出贡献，并不占有成果，得到来自于这个行当的同行认可，这种认可使得个体得以生存（同行评议的重要性）</li>
+</ol>
+<h4 id="社会互动"><a href="#社会互动" class="headerlink" title="社会互动"></a>社会互动</h4><h5 id="为什么会合作"><a href="#为什么会合作" class="headerlink" title="为什么会合作"></a>为什么会合作</h5><ol>
+<li>交换理论：需要交换知识，才能获得承认</li>
+<li>承认的代表：论文的发表</li>
+<li>论文是给谁看的：给同行和竞争对手看的，提醒他们自己的重要性，工作量证明</li>
+</ol>
+<h5 id="消极活动"><a href="#消极活动" class="headerlink" title="消极活动"></a>消极活动</h5><ol>
+<li>过分竞争</li>
+<li>越轨冲突</li>
+<li>作伪：剽窃，伪造等</li>
+</ol>
+<h5 id="如何减少作伪-根除犯罪"><a href="#如何减少作伪-根除犯罪" class="headerlink" title="如何减少作伪/根除犯罪"></a>如何减少作伪/根除犯罪</h5><ol>
+<li>职业道德要求：行为限制</li>
+<li>制度建设：提高犯罪成本</li>
+<li>内外有别：媒体的两方面作用，体制内解决</li>
+</ol>
+<h4 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h4><h5 id="动机与思想"><a href="#动机与思想" class="headerlink" title="动机与思想"></a>动机与思想</h5><ol>
+<li>善：论心不论迹</li>
+<li>恶：论迹不论心</li>
+</ol>
+<h5 id="动机与举证"><a href="#动机与举证" class="headerlink" title="动机与举证"></a>动机与举证</h5><ol>
+<li>做无罪推定，只提供犯罪事实</li>
+<li>无需证明自己有罪</li>
+</ol>
+<h3 id="科学共同体理论"><a href="#科学共同体理论" class="headerlink" title="科学共同体理论"></a>科学共同体理论</h3><ol>
+<li>最早的科学共同体：英国皇家学会，中国物理学会（科学家的自组织）</li>
+<li>所有的科学家构成了一个共同的科学共同体</li>
+</ol>
+<h4 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h4><ol>
+<li>共同体的相互关系，不同的共同体有不同的游戏规则，子共同体需要符合父共同体的要求</li>
+<li>一个个体，可以同时处于不同的的共同体</li>
+</ol>
+<h4 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h4><ol>
+<li>科学研究的体制化，社会化，组织化</li>
+<li>科学发展的主体</li>
+<li>科学理论的检验，评价和选择的主角</li>
+<li>权威，仲裁者，法官，裁判员，游戏规则的执行者</li>
+<li>超越个体的无形力量</li>
+<li>用以维持科学奖励机制</li>
+</ol>
+<h4 id="特殊形态的科学共同体"><a href="#特殊形态的科学共同体" class="headerlink" title="特殊形态的科学共同体"></a>特殊形态的科学共同体</h4><ol>
+<li>科学学派</li>
+<li>无形学院</li>
+</ol>
+<h3 id="科学奖励制度"><a href="#科学奖励制度" class="headerlink" title="科学奖励制度"></a>科学奖励制度</h3><p>试图回答，职业科学家为了什么</p>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ol>
+<li>每个职业背后都存在动力机制</li>
+<li>这个行当最常见的社会现象：优先权争夺</li>
+<li>对该现象的解释：这个体制高度强调独创性，只有第一才有意义</li>
+<li>科学奖励：体制中的同行给予的制度性的赞同</li>
+<li>所有个体对荣誉的追求是一致的，只有获得承认，才能在这个体制中获得发展的资本：科学不存在独行侠</li>
+</ol>
+<h4 id="奖励制度"><a href="#奖励制度" class="headerlink" title="奖励制度"></a>奖励制度</h4><p>本质上是一种承认</p>
+<h5 id="莫顿的奖励制度"><a href="#莫顿的奖励制度" class="headerlink" title="莫顿的奖励制度"></a>莫顿的奖励制度</h5><ol>
+<li>命名法</li>
+<li>奖金</li>
+<li>奖章</li>
+<li>荣誉称号</li>
+<li>科学会员</li>
+<li>外部承认：爵位等</li>
+</ol>
+<h5 id="哈格斯特龙的奖励制度"><a href="#哈格斯特龙的奖励制度" class="headerlink" title="哈格斯特龙的奖励制度"></a>哈格斯特龙的奖励制度</h5><ol>
+<li>制度性承认：应该是每个人都可获得的(发表论文)，而非莫顿的可遇不可求的奖励</li>
+<li>初步承认：还没有能力发文章，但是混了脸熟，再从较差的期刊开始发论文</li>
+</ol>
+<h5 id="科尔兄弟"><a href="#科尔兄弟" class="headerlink" title="科尔兄弟"></a>科尔兄弟</h5><ol>
+<li>荣誉性承认</li>
+<li>职业岗位的承认</li>
+</ol>
+<h5 id="为什么还要奖金呢"><a href="#为什么还要奖金呢" class="headerlink" title="为什么还要奖金呢"></a>为什么还要奖金呢</h5><ol>
+<li>对内，有承认就完了</li>
+<li>对外，宣扬科学家</li>
+</ol>
+<h5 id="奖励的层次性"><a href="#奖励的层次性" class="headerlink" title="奖励的层次性"></a>奖励的层次性</h5><p>满足不同等级的个体对承认的需求</p>
+<h5 id="奖励的功能"><a href="#奖励的功能" class="headerlink" title="奖励的功能"></a>奖励的功能</h5><p>以下特点：有利有弊</p>
+<ol>
+<li>优势积累：两极分化</li>
+<li>竞争机制：优先权至上</li>
+</ol>
+<h5 id="内外控制"><a href="#内外控制" class="headerlink" title="内外控制"></a>内外控制</h5><ol>
+<li>内部控制：科学奖励制度</li>
+<li>外部控制：社会的互动，政策的制定，公众理解</li>
+<li>政府的外部控制：通过科技政策和科学奖励制度影响科学</li>
+</ol>
+<h5 id="科学与社会的关系"><a href="#科学与社会的关系" class="headerlink" title="科学与社会的关系"></a>科学与社会的关系</h5><ol>
+<li>让科学的发展具有人文关怀</li>
+<li>让社会的进步充满理性精神</li>
+<li>两者都是为了人类的未来</li>
+</ol>
+<h2 id="影响"><a href="#影响" class="headerlink" title="影响"></a>影响</h2><ol>
+<li>莫顿的观念已经常规化</li>
+<li>科学很重要，但并不需要联邦政府设立科技部，”为什么要匿名评审，为什么要同行评议，为什么要发表论文”</li>
+</ol>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>重新搭建博客编写环境</title>
+    <url>/2020/06/20/restart/</url>
+    <content><![CDATA[<p>太久没写博客了，最近要看一下InnoDB的东西，内容有点多，需要写一点内容，然而家里没有写博客的环境，故写下该指南，留备以后使用<br><a id="more"></a></p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h3><ol>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载</a>node.js</li>
+<li>一路Next安装</li>
+<li>win10设置里搜索powershell，打开非签名脚本的运行</li>
+</ol>
+<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><ol>
+<li>找到hexo<a href="https://hexo.io/" target="_blank" rel="noopener">主页</a></li>
+<li>安装</li>
+</ol>
+<h3 id="hexo-deployer-git"><a href="#hexo-deployer-git" class="headerlink" title="hexo-deployer-git"></a>hexo-deployer-git</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h3><ol>
+<li>下载并安装<a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">PicGO</a>，下载速度是真滴慢，佛了</li>
+<li>配置阿里云OSS</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>条目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KeyID</td>
+<td>保密</td>
+</tr>
+<tr>
+<td>KeySecret</td>
+<td>保密</td>
+</tr>
+<tr>
+<td>存储空间名</td>
+<td>githubphoto</td>
+</tr>
+<tr>
+<td>存储区域</td>
+<td>oss-cn-beijing</td>
+</tr>
+<tr>
+<td>存储路径</td>
+<td>img/</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="下载源项目"><a href="#下载源项目" class="headerlink" title="下载源项目"></a>下载源项目</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:richsoap/RichSoapBlog</span><br></pre></td></tr></table></figure>
+<h2 id="编写内容"><a href="#编写内容" class="headerlink" title="编写内容"></a>编写内容</h2><p>内容在source/_posts下，markdown格式</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo server //可以动态调试欸，神奇</span><br></pre></td></tr></table></figure>
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><h3 id="设定发布路径"><a href="#设定发布路径" class="headerlink" title="设定发布路径"></a>设定发布路径</h3><p>_config.yml文件的末尾改为（应该已经改好了</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:richsoap/richsoap.GitHub.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>操作指南</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VR电影中的镜头与音响</title>
+    <url>/2020/07/01/vrmovie/</url>
+    <content><![CDATA[<p>小学妹选了个VR课，oculus都没有就选这样的课也是心大，用手机看了几个VR视频，帮她处理一下观后感作业中有关运镜和音响的部分好了。</p>
+<a id="more"></a>
+<h2 id="电影"><a href="#电影" class="headerlink" title="电影"></a>电影</h2><p>戛纳XR x VeeR 360VR沉浸影像展：秘密怪兽</p>
+<h2 id="镜头"><a href="#镜头" class="headerlink" title="镜头"></a>镜头</h2><h3 id="观众的视角"><a href="#观众的视角" class="headerlink" title="观众的视角"></a>观众的视角</h3><p>VR视频中，观众的视角是可以随意转动的，但观众的位置是不变的，这也就使得固定位置的第三人称旁观者视角可能是观众视角的最好选择。参照游戏中的视角定义，可选视角有第一人称视角，越肩视角和旁观者视角。其中，由于观众视角的可转动性，第一人称视角的效果起伏非常大，当观众按照预设的视角观赏影片可获得非常好的沉浸式体验，但如果观众选择自由发挥，效果将大打折扣，所以要做出适合第一人称视角的VR难度非常大；越肩视角要求摄像机“漂浮”于主角后方，算是第一人称视角的延申，存在全程都在看主角背影，难以介入剧情矛盾的问题；旁观者视角，旁观者视角具有容易布置，能够较好地表达叙述逻辑等优点，正确地放置可以获得不错的沉浸体验，对于不需要互动的VR视频来说非常适合。</p>
+<h3 id="兴趣点的转移"><a href="#兴趣点的转移" class="headerlink" title="兴趣点的转移"></a>兴趣点的转移</h3><p>兴趣点的选择与传统视频制作类似，同样聚焦于互动双方，变化的元素。例如，怪兽与人类互动时，兴趣点位于蜷缩与逃跑的人类，但同时也将怪兽的反应收于背景中；当两只怪兽争吵时，视角则位于两个怪兽之间的胸口高度，让观众能够以弱小的旁观者的角度介入到剧情中，效果很好。</p>
+<h3 id="场景，机位，镜头"><a href="#场景，机位，镜头" class="headerlink" title="场景，机位，镜头"></a>场景，机位，镜头</h3><p>视频主角是绿色怪兽，场景的选择也以表现怪兽的生活为主。具体场景包括，欺负人类，发现入侵者，反抗入侵者，反抗失败，表现出怪兽生活从快乐，到惊恐，到生气，到沮丧的整个变化过程。</p>
+<p>由于观众均以旁观者的身份参与到剧情中，所以基于片中人类的活动选择机位能够增强带入感，便于观众理解剧情，例如，拆大楼时的楼内机位，空袭时的高空机位，打架时的街边机位等。</p>
+<p>由于VR视频的特殊性，只能以恒定焦距运镜，不存在特写和远景切换的叙述方式。此外，为顾及观众视觉和空间感的矛盾，片中使用的基本都是固定机位，基本不存在移动和旋转的情况，这也就使得《鸟人》或《地心引力》这样的长镜头叙事技巧派不上用场，故事推进时只能用切换机位的方式跟上主角的行为，镜头叙事的连贯性有所不足。</p>
+<h2 id="音响"><a href="#音响" class="headerlink" title="音响"></a>音响</h2><h3 id="音乐和音响"><a href="#音乐和音响" class="headerlink" title="音乐和音响"></a>音乐和音响</h3><p>VR视频中的音乐的作用与常规视频中相同，均起到烘托氛围的效果。<br>VR视频中的音响分为不可追溯声源的旁白与来自演出环境中的音效。其中，旁白与音乐类似，与普通视频相比无需特殊处理。但由于观众是可以随意改变视角的，所以为提升沉浸感，影片应当能够依据用户的视角变换分别改变左右声道的声音大小与特效，给予观众正确的声音反馈。</p>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>VR</tag>
+        <tag>Movie</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字节AILAB招人</title>
+    <url>/2020/09/11/Recruitment/</url>
+    <content><![CDATA[<p>字节跳动AI-LAB语音组招人了，摸鱼侠推荐投递以下几个职位</p>
+<p>P.S 在你看到的时候可能只有很少几个，会慢慢增加的</p>
+<a id="more"></a>
+<h2 id="语音系统实习生"><a href="#语音系统实习生" class="headerlink" title="语音系统实习生"></a>语音系统实习生</h2><p>职位描述如下图<br><img src="https://githubphoto.oss-cn-beijing.aliyuncs.com/img/20200911203425.png" alt="职位描述图"><br><a href="https://job.toutiao.com/s/JSRNvB5" target="_blank" rel="noopener">投递链接</a></p>
+<h3 id="个人的想法"><a href="#个人的想法" class="headerlink" title="个人的想法"></a>个人的想法</h3><p>对技能的要求不是特别高，不是说需要刷很多题才OK，可以先投一个试试，谁会和毛爷爷过意不去呢？以及，对上班地点没有限制，哪怕实习全过程连公司都没有来过也是可以的。</p>
+]]></content>
+      <categories>
+        <category>jobs</category>
+      </categories>
+      <tags>
+        <tag>jobs</tag>
+      </tags>
+  </entry>
+</search>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    InnoDB-Lock/Transaction |
+    
+    摸鱼侠的老巢</title>
+  
+    <link rel="shortcut icon" href="/fish.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><main class="content">
+  <section class="outer">
+  
+
+<article id="post-innodb4" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      InnoDB-Lock/Transaction
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/21/innodb4/" class="article-date">
+  <time datetime="2020-06-21T13:03:27.000Z" itemprop="datePublished">2020-06-21</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <p>并发，重头戏</p>
+<a id="more"></a>
+<h2 id="Locking"><a href="#Locking" class="headerlink" title="Locking"></a>Locking</h2><h3 id="Shared-and-Exclusive-Locks"><a href="#Shared-and-Exclusive-Locks" class="headerlink" title="Shared and Exclusive Locks"></a>Shared and Exclusive Locks</h3><p>InnoDB默认使用的是行级锁(row-level locking)，具体分成两种，shared(s) locks和exclusive(x) locks。前者用于读，后者用于更改与删除。</p>
+<ul>
+<li>T1 s lock-&gt;T2 s lock get immediately</li>
+<li>T1 s lock-&gt;T2 x lock hold on</li>
+<li>T2 x lock-&gt;T2 any lock hold on</li>
+</ul>
+<h3 id="Intention-Locks"><a href="#Intention-Locks" class="headerlink" title="Intention Locks"></a>Intention Locks</h3><p>意向锁(intention locks)是一种表锁，用于告诉其他用户该事务在之后的操作中会对行进行什么类型的锁。</p>
+<ul>
+<li>Intention shared lock(IS)：意向共享锁</li>
+<li>Intention exclusive lock(IX)：意向排他锁</li>
+</ul>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
+<li>事务在申请行级共享锁之前，需要申请IS锁</li>
+<li>事务在申请行级排他锁之前，需要申请IX锁</li>
+</ul>
+<h4 id="冲突关系"><a href="#冲突关系" class="headerlink" title="冲突关系"></a>冲突关系</h4><p>下表为普通的表锁与意向锁之间的冲突关系，一旦出现冲突，只有当前的锁被释放才能够进行进一步的操作。此外，意向锁只会和表锁产生冲突，行锁粒度的冲突交由行锁去处理，所以IS和IX可以共存。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>x</th>
+<th>IX</th>
+<th>S</th>
+<th>IS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>IX</td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+</tr>
+<tr>
+<td>S</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>IS</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Record-Locks"><a href="#Record-Locks" class="headerlink" title="Record Locks"></a>Record Locks</h3><p>用于锁定索引本身的锁，不论是主索引还是辅助索引。例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT c1 FROM t WHERE c1 &#x3D; 10 FOR UPDATE;</span><br><span class="line">用于锁定所有c1为10的记录，防止其他事务插入&#x2F;删除&#x2F;修改c1为10的数据</span><br></pre></td></tr></table></figure>
+<h3 id="Gap-Locks"><a href="#Gap-Locks" class="headerlink" title="Gap Locks"></a>Gap Locks</h3><p>Record Locks的进阶版，选中一个范围内的数据，不允许其他事务在这个范围内进行增删改查。Gap Locks可用于单索引，多索引，甚至没有索引也是可以的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT c1 FROM t WHERE c1 BETWEEN 10 AND 20 FOR UPDATE;</span><br></pre></td></tr></table></figure>
+<p>对于读unique列的操作，加上Gap Locks是多此一举的行为。多个Gap Locks是可以被Merge的，在真正的修改操作进行前，并不会导致任何冲突。</p>
+<h3 id="Next-Key-Locks"><a href="#Next-Key-Locks" class="headerlink" title="Next-Key Locks"></a>Next-Key Locks</h3><p>Next-Key Locks是Record Locks和Gap Locks的复合体。该操作并不需要手动指定锁的范围，而是锁住相关行的前/后一行之间的间隙。</p>
+<h3 id="Insert-Intention-Locks"><a href="#Insert-Intention-Locks" class="headerlink" title="Insert Intention Locks"></a>Insert Intention Locks</h3><p>Gap锁的一种，用于表示该事务会在一定范围内插入数据，以提高并行插入的能力，如果两个事务的Insert Intention Locks没有重叠区域，则把他们一起运行也不会对系统有什么不良影响。</p>
+<h3 id="AUTO-INC-Locks"><a href="#AUTO-INC-Locks" class="headerlink" title="AUTO-INC Locks"></a>AUTO-INC Locks</h3><p>特殊的表锁，用于自增主键</p>
+<h3 id="Predicate-Locks-for-Spatial-Indexs"><a href="#Predicate-Locks-for-Spatial-Indexs" class="headerlink" title="Predicate Locks for Spatial Indexs"></a>Predicate Locks for Spatial Indexs</h3><p>空间索引(地理数据之类的二维索引)不在考虑范围内，所以忽略</p>
+<h2 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction</h2><h3 id="Transaction-Isolation"><a href="#Transaction-Isolation" class="headerlink" title="Transaction Isolation"></a>Transaction Isolation</h3><h4 id="Read-Uncommited"><a href="#Read-Uncommited" class="headerlink" title="Read Uncommited"></a>Read Uncommited</h4><p>完全不加锁，一切随缘，脏读幻读都有可能</p>
+<h4 id="Read-Committed"><a href="#Read-Committed" class="headerlink" title="Read Committed"></a>Read Committed</h4><p>单次读的一致性有保障，但一个事务中的所有读的一致性没有保障，有可能出现幻读</p>
+<ul>
+<li>读一般只会上行锁，只有在外键和重复键检查的时候才会用Gap Locks</li>
+<li>对于删除和修改，依然使用行锁，在Where筛选结束后，将会释放那些无关的行，虽然概率小，但还是会死锁</li>
+<li>要修改已经被锁上的行时，MySQL会先读一下，初步确定是否符合Where条件，符合条件后又再次进行上锁与读取的操作</li>
+</ul>
+<h4 id="Repeatable-Read-default"><a href="#Repeatable-Read-default" class="headerlink" title="Repeatable Read(default)"></a>Repeatable Read(default)</h4><p>一个事务的读一致性有所保障</p>
+<ul>
+<li>Unique Index，只会锁一行</li>
+<li>其他的，上Gap Locks/Next-Key Locks</li>
+</ul>
+<h4 id="Serializable"><a href="#Serializable" class="headerlink" title="Serializable"></a>Serializable</h4><p>最高强度的隔离，会在每一句SELECT之后加上’FOR SHARE’</p>
+<h3 id="AutoCommit-Commit-amp-Rollback"><a href="#AutoCommit-Commit-amp-Rollback" class="headerlink" title="AutoCommit, Commit&amp;Rollback"></a>AutoCommit, Commit&amp;Rollback</h3><h4 id="AutoCommit"><a href="#AutoCommit" class="headerlink" title="AutoCommit"></a>AutoCommit</h4><p>每个SQL语句都会构成一个事务，没有错误的事务被执行后都会被Commit，错误的执行会被Rollback</p>
+<h4 id="Commit"><a href="#Commit" class="headerlink" title="Commit"></a>Commit</h4><p>意味着该事务的操作会被其他事务看到</p>
+<h3 id="Consistent-Nonlocking-Reads"><a href="#Consistent-Nonlocking-Reads" class="headerlink" title="Consistent Nonlocking Reads"></a>Consistent Nonlocking Reads</h3><p>使用MVCC+s locks让多个事务同时读写数据，而且不会互相干扰，具体效果依据隔离程度决定。在以下情况，该功能不可用</p>
+<ul>
+<li>DROP TABLE</li>
+<li>ALTER TABLE</li>
+</ul>
+<h3 id="Locking-Reads"><a href="#Locking-Reads" class="headerlink" title="Locking Reads"></a>Locking Reads</h3><p>普通的SELECT可能隔离强度不足，手动加锁</p>
+<ul>
+<li>SELECT FOR SHARE</li>
+<li>SELECT FOR UPDATE</li>
+</ul>
+<h2 id="Deadlocks"><a href="#Deadlocks" class="headerlink" title="Deadlocks"></a>Deadlocks</h2><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>死锁是由写操作产生的，所以改变隔离状态不会让死锁问题得到改善。</p>
+<ul>
+<li>写粒度要小</li>
+<li>多用事务，少用表锁</li>
+</ul>
+<h3 id="Detection-and-Rollback"><a href="#Detection-and-Rollback" class="headerlink" title="Detection and Rollback"></a>Detection and Rollback</h3><ul>
+<li>碰撞检测(有向图找环)；如果出现超过200个事务在等待；也可以关掉使用事务超时进行判断</li>
+<li>选择插入/更新/删除行数最小的事务回滚</li>
+<li>InnoDB回滚时，会释放所有的锁。但是，存在个别情况，例如语句执行失败后，仅仅回滚这一条语句，则不会释放该语句的锁，因为InnoDB不存储SQL语句与锁的对应关系</li>
+<li>如果是SELECT在事务中调用预先设置好的内建函数，而且出现语句失败，则该语句会回滚，如果又进一步手动执行ROLLBACK，会导致整个事务一起回滚</li>
+</ul>
+<h2 id="Scheduling"><a href="#Scheduling" class="headerlink" title="Scheduling"></a>Scheduling</h2><p>Contention-Aware Transaction Scheduling(CATS)，基于权重决定事务优先关系，权重由以下内容决定</p>
+<ul>
+<li>为阻塞事务数目多的事务更高的权重</li>
+<li>阻塞数目一样多，等待时间长的更高权重</li>
+</ul>
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-transaction-model.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-transaction-model.html</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.richsoap.site/2020/06/21/innodb4/" data-id="ckey7mni9000j8lmj6khw0hnb"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/InnoDB/" rel="tag">InnoDB</a></li></ul>
+
+      
+        
+    <span class="article-count-show-icon"><span id="2020-06-21T13:03:27.000Z_show" class="article-count-show"  data-flag-title="InnoDB-Lock/Transaction" uuid="2020-06-21T13:03:27.000Z">阅读量:</span>
+    </span>
+
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/21/innodb5/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            InnoDB-Disk IO &amp; File Space
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/21/innodb3/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">InnoDB-Architecture</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '06d26f843192b3cd2f5b',
+      clientSecret: '8874ed9a8725d3c529802968d02ec355404c52bc',
+      repo: 'BlogComments',
+      owner: 'richsoap',
+      admin: ['richsoap'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+</article>
+
+
+
+  
+	<span id="2020-06-21T13:03:27.000Z_do"class="article-count-do"  data-flag-title="InnoDB-Lock/Transaction" uuid="2020-06-21T13:03:27.000Z"></span>
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+    
+        <li><i class="fe fe-bar-chart"></i> 
+            <span id="bar_chart_show"class="article-count-show"  data-flag-title="阅读量" uuid="totla_read">阅读量:</span>
+            <span id="bar_chart_do"class="total-read-count-do"  data-flag-title="阅读量" uuid="totla_read"></span></li>
+        <li><i class="fe fe-smile-alt"></i> 
+            <span id="smile_alt_show"class="article-count-show"  data-flag-title="访问量" uuid="totla_visit">访问量:</span>
+            <span id="smile_alt_do"class="total-visit-count-do"  data-flag-title="访问量" uuid="totla_visit"></span> </li>
+    
+  </ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 摸鱼侠的老巢</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/doublefish.svg" alt="摸鱼侠的老巢"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">主页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">文档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">Tags</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ -->
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("7O0VMVnyJY3agelP7oK3YheP-gzGzoHsz", "i7xdrYvE0xAXFHneDxyQzWaE");</script>
+<script>
+
+function createRecord(Counter, uuid, title) {
+	var newCounter = new Counter();
+	newCounter.set("title", title);
+	newCounter.set("uuid", uuid);
+	newCounter.set("times", 0);
+	newCounter.save(null, {
+		success: function(newCounter) {
+			console.log("create a new counter: title: " + title + ", uuid: "+ uuid)
+			var content = $(document.getElementById(uuid)).text() + ": " + newCounter.get("times");
+			$(document.getElementById(uuid).text(content));
+		},
+		error: function(error) {
+			console.log("failed to create new counter: title: " + title + ", uuid: "+ uuid);
+		}
+	})
+}
+
+function showCount(CounterName) {
+	var Counter = AV.Object.extend(CounterName);
+	var query = new AV.Query(Counter);
+	$(".article-count-show").each(function() {
+		var uuid = $(this).attr("uuid").trim();
+		var url = $(this).attr("id").trim();
+		query.equalTo("uuid", uuid);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + '0';
+					$(document.getElementById(url)).text(content);
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + object.get('times');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				var content = $(document.getElementById(url)).text() + '0';
+				$(document.getElementById(url)).text(content);
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addOneCount(CounterName, classname) {
+	var Counter = AV.Object.extend(CounterName);
+	var uuid = $(classname).attr('uuid').trim();
+	var url = $(classname).attr("id").trim();
+	var title = $(classname).attr('data-flag-title').trim();
+	console.log("query " + uuid)
+	var query = new AV.Query(Counter);
+	query.equalTo("uuid", uuid);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("times");
+				counter.save(null, {
+					success: function() {
+						console.log("add time for uuid: " + uuid + ", title: " + title);
+					},
+					error: function(error) {
+						console.log('Failed to save reader num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				console.log("create " + uuid)
+				createRecord(Counter, uuid, title);
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+
+function addPostCount(CounterName) {
+	var uuid = $(".article-count-do").attr('uuid').trim();
+	if (checkHostKey(uuid)) {
+		addOneCount(CounterName, ".article-count-do");
+		addOneCount(CounterName, ".total-read-count-do");
+	}
+}
+
+function setCookie(key, value) {
+	var hours = 12;
+	var exp = new Date();
+	exp.setTime(exp.getTime() + hours * 60 * 60 * 1000);
+	cookie = key + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/"
+	document.cookie = cookie;
+	console.log(cookie);
+}
+
+function isExistedCookie(key) {
+	return document.cookie.search(key) >= 0
+}
+
+
+function checkHostKey(key) {
+	var existed = isExistedCookie(key);
+	console.log("check result: "+existed)
+	setCookie(key, true);
+	return !existed;
+}
+
+$(function() {
+	if ($('.article-count-do').length == 1) {
+		addPostCount("ReadCounter");
+	}
+	if ($('.total-visit-count-do').length == 1) {
+		if (checkHostKey("total-visit")) {
+			addOneCount("ReadCounter", '.total-visit-count-do');
+		}
+	}
+	if ($('.article-count-show').length > 0) {
+		showCount("ReadCounter");
+	}
+
+});
+</script>
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"superSample":2,"position":"right","width":200,"height":400,"hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end --></body>
+</html>

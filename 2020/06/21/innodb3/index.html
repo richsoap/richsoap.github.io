@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    InnoDB-Architecture |
+    
+    摸鱼侠的老巢</title>
+  
+    <link rel="shortcut icon" href="/fish.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><main class="content">
+  <section class="outer">
+  
+
+<article id="post-innodb3" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      InnoDB-Architecture
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/06/21/innodb3/" class="article-date">
+  <time datetime="2020-06-21T13:01:42.000Z" itemprop="datePublished">2020-06-21</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <p>总的来说，InnoDB有两部分内容，一个是内存，一个是磁盘，两者间使用OS给的API连接，具体结构如下图所示。<br><img src="https://dev.mysql.com/doc/refman/8.0/en/images/innodb-architecture.png" alt="InnoDB Architecture Figure"></p>
+<a id="more"></a>
+<h2 id="In-Memory-Structres"><a href="#In-Memory-Structres" class="headerlink" title="In-Memory Structres"></a>In-Memory Structres</h2><p>从图里也看到了，内存里主要就四个东西Buffer Pool, Change Buffer, Adaptive Hash Index和Log Buffer</p>
+<h3 id="Buffer-Pool"><a href="#Buffer-Pool" class="headerlink" title="Buffer Pool"></a>Buffer Pool</h3><p>Buffer池，涉及到频繁分配内存的应用都会有个Buffer池，看看InnoDB怎么个实现方式。</p>
+<h4 id="存什么"><a href="#存什么" class="headerlink" title="存什么"></a>存什么</h4><p>Buffer Pool里存的都是InnoDB缓存的表和索引，主要是减少访问热数据时带来的读磁盘，从而提升整个系统的运行速度。在专用的机器上，最多会有80%的内存被用于Buffer Pool。</p>
+<h4 id="怎么存"><a href="#怎么存" class="headerlink" title="怎么存"></a>怎么存</h4><p>Buffer Pool里的内存被分配为多页，页与页之间构成一个链表，使用LRU算法排布数据。所以，知道如何将热表放在Buffer Pool里是MySQL调优的重要手段。</p>
+<h4 id="LRU算法"><a href="#LRU算法" class="headerlink" title="LRU算法"></a>LRU算法</h4><p>InnoDB用的LRU算法如下</p>
+<ul>
+<li>页和页构成链表</li>
+<li>空间不足时，删除最不常访问的页，将新页插入到链表中部，并将链表分为新链（最常访问）和旧链（最不常访问）</li>
+<li>当访问旧页(位于旧链的页)时，该页被插到新链首</li>
+<li>页不会被主动地往链尾移动，它只会因为其他页变新而被挤到链尾，最终被挤出去</li>
+</ul>
+<p>那么问题来了，什么是链表中部呢？新插入的数据将链表分为前5/8和后3/8.其中，前5/8表示的是最常访问的数据，后3/8表示的是最不常访问的数据，并不是真的1/2位置。</p>
+<p>那么问题又来了，什么时候插数据进去呢？当用户进行SQL查询的时候，或者MySQL进行read-ahead（由上层应用发起的提前加载可能出现的页的操作）时。此外，当用户进行SQL查询时，已有页会变新，但如果只是read-ahead，那只会把缺的页读进来，但只有再次被读时，才会变新。</p>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ol>
+<li>表格扫描，或者其他会导致MySQLDump的操作，会把一整个表都读入到Buffer Pool中，影响性能</li>
+</ol>
+<h3 id="Change-Buffer"><a href="#Change-Buffer" class="headerlink" title="Change Buffer"></a>Change Buffer</h3><p>由于辅助索引没有唯一性要求，且大部分修改都比较随机，所以需要一个数据结构来统筹规划一下修改，避免修改过于零散导致磁盘IO性能损失太多。例如一部分依据辅助索引进行判断的删改查。需要注意的是，Change Buffer并不只是Buffer Pool的配套功能，磁盘中也有一个Change Buffer，用以避免零散的磁盘IO。</p>
+<h4 id="存什么-1"><a href="#存什么-1" class="headerlink" title="存什么"></a>存什么</h4><p>Change Buffer是一个特殊的数据结构，旨在缓存那些对辅助索引进行修改，但主索引中的相关数据却并没有在Buffer Pool中的情况，例如Insert, Update和Delete。当相关页被读入Buffer Pool的时候，又将具体的修改应用上去（可能是有人要读相关内容，或者只是Purge线程清理数据）。</p>
+<h3 id="Adaptive-Hash-Index"><a href="#Adaptive-Hash-Index" class="headerlink" title="Adaptive Hash Index"></a>Adaptive Hash Index</h3><p>Adaptive Hash Index通过牺牲一部分传统功能和可靠性，向外界提供类似于Hash表的接口，方便开发。主要的思想是，将查询过程中需要用到的B+树节点缓存下来，避免因为上层节点而频繁IO。</p>
+<h4 id="这个Index由谁建"><a href="#这个Index由谁建" class="headerlink" title="这个Index由谁建"></a>这个Index由谁建</h4><p>显然，如果一个表能经常地被映射到内存里面，那性能提升就比较明显，这个Index由InnoDB内部的一套分析机制决定，按照性能提升最大的方式建索引。</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ol>
+<li>在某些工作负载下，Hash索引的查找速度可能并不咋地，而且像Like之类的泛查找并不能从中获益，甚至还会导致Hash索引速度变慢，所以可以有选择地将其关闭。</li>
+<li>Hash索引是分区的，不同索引会被分到不同的区，具体多少个区，每个区有多大都有参数进行调整。</li>
+</ol>
+<h3 id="Log-Buffer"><a href="#Log-Buffer" class="headerlink" title="Log Buffer"></a>Log Buffer</h3><p>Log Buffer中存的是一些需要被flush进磁盘的内容，这部分内容会被周期性地写进磁盘中。如果一个事务修改的数据太多，会导致Log Buffer满了，然后就得停下更新，写磁盘，然后继续更新，这样会影响性能。这样的情况下，Log Buffer大一些对身体好。此外，由于事务的隔离等原因，所以这个Log Buffer也有多种写的方式，具体见参数innodb_flush_log_at_trx_commit。</p>
+<h2 id="On-Disk-Structures"><a href="#On-Disk-Structures" class="headerlink" title="On-Disk Structures"></a>On-Disk Structures</h2><p>Tables, Indexs, Tablespaces, Doublewrite Buffer, Redo Log &amp; Undo Logs</p>
+<h3 id="Tables"><a href="#Tables" class="headerlink" title="Tables"></a>Tables</h3><p>表没啥好说的，就一个抽象概念，需要有主键，要使用个别炫酷的数据类型还需要开启相应的配置。</p>
+<h4 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h4><p>主键就写一下定义好了</p>
+<ol>
+<li>查询中最常使用的列</li>
+<li>没有前导空格</li>
+<li>没有重复值</li>
+<li>几乎不会变</li>
+</ol>
+<h3 id="Indexs"><a href="#Indexs" class="headerlink" title="Indexs"></a>Indexs</h3><h4 id="Clustered-Index"><a href="#Clustered-Index" class="headerlink" title="Clustered Index"></a>Clustered Index</h4><p>每一个InnoDB表都有一个主索引(使用主键作为key)，有三种可选的主键</p>
+<ol>
+<li>手动指定PRIMARY KEY</li>
+<li>第一个UNIQUE类型，且非空的列</li>
+<li>InnoDB自动加上的GEN_CLUST_INDEX隐藏列(6-byte)</li>
+</ol>
+<h3 id="Secondary-Indexs"><a href="#Secondary-Indexs" class="headerlink" title="Secondary Indexs"></a>Secondary Indexs</h3><p>辅助索引就可以有很多个了，最终辅助索引得到的只是相关数据的主键，所以，主键越长，辅助索引越大</p>
+<h3 id="Tablespaces"><a href="#Tablespaces" class="headerlink" title="Tablespaces"></a>Tablespaces</h3><h4 id="The-System-Tablespaces"><a href="#The-System-Tablespaces" class="headerlink" title="The System Tablespaces"></a>The System Tablespaces</h4><p>Change buffer的存储位置，也包括系统空间内的表和索引数据，该空间下可以有多个数据文件，数量和尺寸均可以通过参数调整。</p>
+<h4 id="File-Per-Table-Tablespaces"><a href="#File-Per-Table-Tablespaces" class="headerlink" title="File-Per-Table Tablespaces"></a>File-Per-Table Tablespaces</h4><p>一个表，一个文件。</p>
+<h5 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h5><ul>
+<li>磁盘空间可以得到及时回收，如果用共享文件，比如System就不能。特别是例如Alter Table这样的表复制操作，效果更加显著。</li>
+<li>删表速度更快</li>
+<li>可以把表建在不同的盘上，提升IO</li>
+<li>支持更多的数据类型</li>
+<li>减少系统恢复时间</li>
+<li>单表备份</li>
+<li>单表尺寸检测</li>
+<li>多表同时写入</li>
+<li>单表尺寸可以大到64T</li>
+</ul>
+<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ul>
+<li>空间复用率低</li>
+<li>fsync只能针对单文件，这就导致很多表。就会有很多fsync</li>
+<li>mysqld需要位置一堆文件描述符</li>
+<li>碎片化明显</li>
+<li>在删表的时候，会在Buffer Pool中扫描是否存在需要删掉的内容，这个过程有点长</li>
+</ul>
+<h4 id="General-Tablespaces"><a href="#General-Tablespaces" class="headerlink" title="General Tablespaces"></a>General Tablespaces</h4><p>这是一个使用Create tablespace生成的共享空间，和File-Per-Table差不多</p>
+<h5 id="一些好处"><a href="#一些好处" class="headerlink" title="一些好处"></a>一些好处</h5><ol>
+<li>多表共享一个文件</li>
+<li>节约内存</li>
+<li>便于管理</li>
+<li>支持多种数据类型</li>
+</ol>
+<h4 id="Undo-Tablespaces"><a href="#Undo-Tablespaces" class="headerlink" title="Undo Tablespaces"></a>Undo Tablespaces</h4><p>用于存放Undo logs，位于undo log segments是rollback segments的一部分。<br>默认有两个undo tablespaces，undo tablespaces至少要两个，以应对删除undo tablespaces的情况。(有的时候Undo tablespaces太大了，需要定期清理一下，该过程可以自动也可以手动，但是在系统没有什么负载的时候清理)<br>默认位于MySQL根目录下。</p>
+<h4 id="Temporary-Tablespaces"><a href="#Temporary-Tablespaces" class="headerlink" title="Temporary Tablespaces"></a>Temporary Tablespaces</h4><h5 id="Session-Temporary-Tablespaces"><a href="#Session-Temporary-Tablespaces" class="headerlink" title="Session Temporary Tablespaces"></a>Session Temporary Tablespaces</h5><p>用于存储用户创建的临时表，以及跨表查询的优化。<br>一个Session最多可以到临时表池中申请两个临时表空间，一个用于存储用户的查询结果，另外一个用于存储优化器生成的临时表。<br>临时表池中开始时有10个表，其空间不会缩小，但会在不够时自动扩容。其内容在关闭或重启时自动清空。</p>
+<h5 id="Global-Temporary-Tablespaces"><a href="#Global-Temporary-Tablespaces" class="headerlink" title="Global Temporary Tablespaces"></a>Global Temporary Tablespaces</h5><p>用于存储rollback segments中，与用户创建的临时表有关的内容。在系统关闭时自动清空，系统启动时又自动创建，如果不能创建，MySQL就会启动失败。一般由于上一次创建的Global Temporary Tablespaces还存在，此时手动删掉再重启即可。</p>
+<h4 id="系统离线时移动表文件"><a href="#系统离线时移动表文件" class="headerlink" title="系统离线时移动表文件"></a>系统离线时移动表文件</h4><p>过于技术和实际化，没啥好看的</p>
+<h3 id="Doublewrite-Buffer"><a href="#Doublewrite-Buffer" class="headerlink" title="Doublewrite Buffer"></a>Doublewrite Buffer</h3><p>在数据从buffer pool写到磁盘之前，需要在Doublewrite Buffer中缓存一下。因为要找到正确的写入页又比较花数，在这个过程中一旦crash，需要写入的内容就没了。虽然诗句被写了两次，但由于Doublewrite Buffer是大块连续写，还用上了fsync，所以速度非常快。在旧版本中，Doublewrite Buffer位于系统表空间中；而新版本则位于专门的Doublewrite Buffer文件中。</p>
+<h3 id="Redo-Log"><a href="#Redo-Log" class="headerlink" title="Redo Log"></a>Redo Log</h3><p>Redo Log主要用于将未完成的事务从crash中恢复过来，具体是将buffer pool里尚未被写入磁盘的内容持久化下来，出现意外后，内存中的内容就会丢失，重启时读入持久化的结果，将系统状态恢复到崩溃之前的状态。里面一般存的是页的修改，而不是命令。在需要恢复的时候，系统会再执行相关语句一遍，从而将系统恢复到崩溃之前的状态。</p>
+<h3 id="Undo-Logs"><a href="#Undo-Logs" class="headerlink" title="Undo Logs"></a>Undo Logs</h3><p>Undo Logs是单个事务的undo log的集合。每一条undo log里都包含了如何将该事务对主索引的修改复原的内容，如果另外一个事务需要看历史数据，则使用undo log里的内容，找到历史数据的内容。</p>
+<h4 id="存在哪里"><a href="#存在哪里" class="headerlink" title="存在哪里"></a>存在哪里</h4><p>Undo logs位于undo log segments里，其位于rollback segments的一部分，具体是undo tablespaces和global temporary tablespace中。Global temporary tablespace中的部分用于恢复用户的临时表，这些logs是不会存在Redo Log里的，他们只会用于回滚操作，以避免不必要的IO。</p>
+<p>Undo logs也是可以加密的，具体细节以后看。</p>
+<h4 id="数量"><a href="#数量" class="headerlink" title="数量"></a>数量</h4><p>每一个undo tablespaces和global temporary tablespace都默认包含128个rollback segments(可以通过参数指定).每一个rollback segments支持的事务数，由其内部的undo slots数量和每个事务需要的undo logs数共同决定。一个rollback segments正好一页，而一个undo slot占16byte，所以很容易就能算出来undo slots的数量。</p>
+<p>一个事务最多可以分到4个undo logs，分别用于处理</p>
+<ol>
+<li>INSERT定义表</li>
+<li>UPDATE/DELETE定义表</li>
+<li>INSERT临时表</li>
+<li>UPDATE/DELETE临时表</li>
+</ol>
+<p>undo log一旦被指定，将伴随该事务的整个生命周期，中途不会被指定给其他事务。</p>
+<h5 id="从undo-logs数量估算并发事务上限"><a href="#从undo-logs数量估算并发事务上限" class="headerlink" title="从undo logs数量估算并发事务上限"></a>从undo logs数量估算并发事务上限</h5><ol>
+<li>如果每个事务都不会既INSERT又DELETE: (innodb_page_size / 16) <em> innodb_rollback_segments </em> number of undo tablespaces</li>
+<li>每个事务既INSERT又DELETE: (innodb_page_size / 16 / 2) <em> innodb_rollback_segments </em> number of undo tablespaces</li>
+<li>事务只会在临时表中INSERT：(innodb_page_size / 16) * innodb_rollback_segments</li>
+<li>事务在临时表中既INSERT又DELETE: (innodb_page_size / 16 / 2) * innodb_rollback_segments</li>
+</ol>
+<h4 id="和binlog的关系"><a href="#和binlog的关系" class="headerlink" title="和binlog的关系"></a>和binlog的关系</h4><p>binlog是MySQL最重要的日志，由高层的MySQL组件记录，共有两种，包括Statement，以事件的形式记录了所有DDL，DML以及运行用时；Row，记录每一条数据的修改情况。此外，给二进制日志是事务安全的。两个最主要的用途，主从复制，数据恢复</p>
+<p>什么是事务安全的呢？</p>
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><ul>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-architecture.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/innodb-architecture.html</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-in-memory-structures.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/innodb-in-memory-structures.html</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-on-disk-structures.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/innodb-on-disk-structures.html</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.richsoap.site/2020/06/21/innodb3/" data-id="ckey7mni7000f8lmj8ndj0k1l"
+         class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/InnoDB/" rel="tag">InnoDB</a></li></ul>
+
+      
+        
+    <span class="article-count-show-icon"><span id="2020-06-21T13:01:42.000Z_show" class="article-count-show"  data-flag-title="InnoDB-Architecture" uuid="2020-06-21T13:01:42.000Z">阅读量:</span>
+    </span>
+
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/06/21/innodb4/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            InnoDB-Lock/Transaction
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/21/innodb2/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">InnoDB-MVCC</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '06d26f843192b3cd2f5b',
+      clientSecret: '8874ed9a8725d3c529802968d02ec355404c52bc',
+      repo: 'BlogComments',
+      owner: 'richsoap',
+      admin: ['richsoap'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+</article>
+
+
+
+  
+	<span id="2020-06-21T13:01:42.000Z_do"class="article-count-do"  data-flag-title="InnoDB-Architecture" uuid="2020-06-21T13:01:42.000Z"></span>
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+    
+        <li><i class="fe fe-bar-chart"></i> 
+            <span id="bar_chart_show"class="article-count-show"  data-flag-title="阅读量" uuid="totla_read">阅读量:</span>
+            <span id="bar_chart_do"class="total-read-count-do"  data-flag-title="阅读量" uuid="totla_read"></span></li>
+        <li><i class="fe fe-smile-alt"></i> 
+            <span id="smile_alt_show"class="article-count-show"  data-flag-title="访问量" uuid="totla_visit">访问量:</span>
+            <span id="smile_alt_do"class="total-visit-count-do"  data-flag-title="访问量" uuid="totla_visit"></span> </li>
+    
+  </ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 摸鱼侠的老巢</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/doublefish.svg" alt="摸鱼侠的老巢"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">主页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">文档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">Tags</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ -->
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("7O0VMVnyJY3agelP7oK3YheP-gzGzoHsz", "i7xdrYvE0xAXFHneDxyQzWaE");</script>
+<script>
+
+function createRecord(Counter, uuid, title) {
+	var newCounter = new Counter();
+	newCounter.set("title", title);
+	newCounter.set("uuid", uuid);
+	newCounter.set("times", 0);
+	newCounter.save(null, {
+		success: function(newCounter) {
+			console.log("create a new counter: title: " + title + ", uuid: "+ uuid)
+			var content = $(document.getElementById(uuid)).text() + ": " + newCounter.get("times");
+			$(document.getElementById(uuid).text(content));
+		},
+		error: function(error) {
+			console.log("failed to create new counter: title: " + title + ", uuid: "+ uuid);
+		}
+	})
+}
+
+function showCount(CounterName) {
+	var Counter = AV.Object.extend(CounterName);
+	var query = new AV.Query(Counter);
+	$(".article-count-show").each(function() {
+		var uuid = $(this).attr("uuid").trim();
+		var url = $(this).attr("id").trim();
+		query.equalTo("uuid", uuid);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + '0';
+					$(document.getElementById(url)).text(content);
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + object.get('times');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				var content = $(document.getElementById(url)).text() + '0';
+				$(document.getElementById(url)).text(content);
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addOneCount(CounterName, classname) {
+	var Counter = AV.Object.extend(CounterName);
+	var uuid = $(classname).attr('uuid').trim();
+	var url = $(classname).attr("id").trim();
+	var title = $(classname).attr('data-flag-title').trim();
+	console.log("query " + uuid)
+	var query = new AV.Query(Counter);
+	query.equalTo("uuid", uuid);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("times");
+				counter.save(null, {
+					success: function() {
+						console.log("add time for uuid: " + uuid + ", title: " + title);
+					},
+					error: function(error) {
+						console.log('Failed to save reader num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				console.log("create " + uuid)
+				createRecord(Counter, uuid, title);
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+
+function addPostCount(CounterName) {
+	var uuid = $(".article-count-do").attr('uuid').trim();
+	if (checkHostKey(uuid)) {
+		addOneCount(CounterName, ".article-count-do");
+		addOneCount(CounterName, ".total-read-count-do");
+	}
+}
+
+function setCookie(key, value) {
+	var hours = 12;
+	var exp = new Date();
+	exp.setTime(exp.getTime() + hours * 60 * 60 * 1000);
+	cookie = key + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/"
+	document.cookie = cookie;
+	console.log(cookie);
+}
+
+function isExistedCookie(key) {
+	return document.cookie.search(key) >= 0
+}
+
+
+function checkHostKey(key) {
+	var existed = isExistedCookie(key);
+	console.log("check result: "+existed)
+	setCookie(key, true);
+	return !existed;
+}
+
+$(function() {
+	if ($('.article-count-do').length == 1) {
+		addPostCount("ReadCounter");
+	}
+	if ($('.total-visit-count-do').length == 1) {
+		if (checkHostKey("total-visit")) {
+			addOneCount("ReadCounter", '.total-visit-count-do');
+		}
+	}
+	if ($('.article-count-show').length > 0) {
+		showCount("ReadCounter");
+	}
+
+});
+</script>
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"superSample":2,"position":"right","width":200,"height":400,"hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end --></body>
+</html>
